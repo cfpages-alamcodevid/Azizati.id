@@ -2,6 +2,12 @@ import { useEffect } from "react";
 import SectionTitle from "../components/ui/SectionTitle";
 import { banks } from "../data/banks";
 import { useSimulatorStore } from "../store/simulatorStore";
+import {
+  BanknotesIcon,
+  CalendarDaysIcon,
+  CalculatorIcon,
+  CheckCircleIcon,
+} from "@heroicons/react/24/outline";
 
 const formatRupiah = (value) =>
   new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(
@@ -35,7 +41,10 @@ export default function SimulatorPage() {
 
         <div className="grid cards-2">
           <article className="card">
-            <h3>Input Simulasi</h3>
+            <h3 className="card-title-with-icon">
+              <CalculatorIcon className="card-icon-sm" />
+              Input Simulasi
+            </h3>
             <div className="form-stack">
               <label>
                 Tujuan
@@ -70,7 +79,20 @@ export default function SimulatorPage() {
           </article>
 
           <article className="card">
-            <h3>Rekomendasi</h3>
+            <h3 className="card-title-with-icon">
+              <BanknotesIcon className="card-icon-sm" />
+              Rekomendasi
+            </h3>
+            <div className="sim-summary">
+              <p>
+                <CalendarDaysIcon className="inline-icon" />
+                Tenor: <strong>{targetYears} tahun</strong>
+              </p>
+              <p>
+                <BanknotesIcon className="inline-icon" />
+                Biaya target: <strong>{formatRupiah(totalCost)}</strong>
+              </p>
+            </div>
             <div className="result-stack">
               {result.map((item) => {
                 const bank = banks.find((entry) => entry.id === item.bankId);
@@ -82,7 +104,10 @@ export default function SimulatorPage() {
                     <p className="result-value">
                       {formatRupiah(item.monthlyContribution)} / bulan
                     </p>
-                    <p>{item.reason}</p>
+                    <p className="result-reason">
+                      <CheckCircleIcon className="inline-icon" />
+                      {item.reason}
+                    </p>
                   </div>
                 );
               })}

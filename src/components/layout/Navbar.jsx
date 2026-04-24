@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { SparklesIcon } from "@heroicons/react/24/solid";
 
 const navItems = [
   { to: "/", label: "Beranda" },
@@ -29,6 +30,7 @@ export default function Navbar() {
         </nav>
 
         <NavLink to="/simulator" className="btn btn-primary">
+          <SparklesIcon className="btn-icon" />
           Mulai Simulasi
         </NavLink>
       </div>

@@ -13,6 +13,7 @@
     "d1:migrate:remote": "wrangler d1 execute AZIZATI_DB --remote --file ./db/schema.sql"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.6.0",

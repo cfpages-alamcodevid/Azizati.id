@@ -2,8 +2,15 @@ import { useState } from "react";
 import SectionTitle from "../components/ui/SectionTitle";
 import { banks } from "../data/banks";
 import { useRegistrationStore } from "../store/registrationStore";
+import {
+  BuildingLibraryIcon,
+  CheckCircleIcon,
+  IdentificationIcon,
+  Squares2X2Icon,
+} from "@heroicons/react/24/outline";
 
 const steps = ["Pilih Produk", "Pilih Bank", "Data Diri", "Review"];
+const stepIcons = [Squares2X2Icon, BuildingLibraryIcon, IdentificationIcon, CheckCircleIcon];
 
 const isPersonalDataValid = (form) =>
   form.fullName.trim() &&
@@ -62,6 +69,10 @@ export default function RegistrationPage() {
         <div className="stepper">
           {steps.map((label, index) => (
             <div key={label} className={`step ${step >= index + 1 ? "active" : ""}`}>
+              {(() => {
+                const Icon = stepIcons[index];
+                return <Icon className="step-icon" />;
+              })()}
               <span>{index + 1}</span>
               <p>{label}</p>
             </div>
@@ -71,7 +82,10 @@ export default function RegistrationPage() {
         <article className="card form-card">
           {step === 1 ? (
             <div className="form-stack">
-              <h3>Pilih Produk</h3>
+              <h3 className="card-title-with-icon">
+                <Squares2X2Icon className="card-icon-sm" />
+                Pilih Produk
+              </h3>
               <label className="choice-card">
                 <input
                   type="radio"
@@ -95,7 +109,10 @@ export default function RegistrationPage() {
 
           {step === 2 ? (
             <div className="form-stack">
-              <h3>Pilih Bank Mitra</h3>
+              <h3 className="card-title-with-icon">
+                <BuildingLibraryIcon className="card-icon-sm" />
+                Pilih Bank Mitra
+              </h3>
               {banks.map((bank) => (
                 <label className="choice-card" key={bank.id}>
                   <input
@@ -112,7 +129,10 @@ export default function RegistrationPage() {
 
           {step === 3 ? (
             <div className="form-stack">
-              <h3>Data Diri</h3>
+              <h3 className="card-title-with-icon">
+                <IdentificationIcon className="card-icon-sm" />
+                Data Diri
+              </h3>
               <label>
                 Nama lengkap
                 <input
@@ -150,7 +170,10 @@ export default function RegistrationPage() {
 
           {step === 4 ? (
             <div className="form-stack">
-              <h3>Ringkasan Pendaftaran</h3>
+              <h3 className="card-title-with-icon">
+                <CheckCircleIcon className="card-icon-sm" />
+                Ringkasan Pendaftaran
+              </h3>
               <p>
                 Produk: <strong>{form.product || "-"}</strong>
               </p>

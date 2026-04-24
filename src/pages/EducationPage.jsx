@@ -1,5 +1,7 @@
 import { useState } from "react";
 import SectionTitle from "../components/ui/SectionTitle";
+import { ChevronDownIcon, CheckBadgeIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const requirements = [
   "KTP aktif",
@@ -40,7 +42,10 @@ export default function EducationPage() {
             <h3>Syarat Pendaftaran</h3>
             <ul className="list">
               {requirements.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="list-with-icon">
+                  <CheckBadgeIcon className="list-icon" />
+                  {item}
+                </li>
               ))}
             </ul>
           </article>
@@ -56,12 +61,29 @@ export default function EducationPage() {
                   type="button"
                 >
                   <p>{faq.question}</p>
+                  <ChevronDownIcon className={`faq-chevron ${openIndex === index ? "open" : ""}`} />
                   {openIndex === index ? <span>{faq.answer}</span> : null}
                 </button>
               ))}
             </div>
           </article>
         </div>
+
+        <article className="card cta-card">
+          <h3>Sudah siap mulai?</h3>
+          <p>
+            Lanjut ke simulator untuk menghitung estimasi tabungan, lalu kirim pendaftaran
+            agar tim kami bantu proses berikutnya.
+          </p>
+          <div className="cta-row">
+            <Link to="/simulator" className="btn btn-primary">
+              Buka Simulator
+            </Link>
+            <Link to="/pendaftaran" className="btn btn-secondary">
+              Lanjut Pendaftaran
+            </Link>
+          </div>
+        </article>
       </div>
     </section>
   );

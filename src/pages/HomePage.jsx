@@ -1,11 +1,25 @@
 import { Link } from "react-router-dom";
 import SectionTitle from "../components/ui/SectionTitle";
+import {
+  BanknotesIcon,
+  ChartBarSquareIcon,
+  CheckBadgeIcon,
+  ClockIcon,
+  ShieldCheckIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/outline";
 
 const benefits = [
-  "Sesuai prinsip syariah",
-  "Pilihan bank mitra terverifikasi",
-  "Simulasi tabungan cepat dan mudah",
-  "Pendampingan pendaftaran oleh tim Azizati",
+  { title: "Sesuai prinsip syariah", icon: ShieldCheckIcon },
+  { title: "Pilihan bank mitra terverifikasi", icon: CheckBadgeIcon },
+  { title: "Simulasi tabungan cepat dan mudah", icon: ChartBarSquareIcon },
+  { title: "Pendampingan pendaftaran oleh tim Azizati", icon: UserGroupIcon },
+];
+
+const stats = [
+  { label: "Bank Mitra Syariah", value: "4+", icon: BanknotesIcon },
+  { label: "Lead Dibantu", value: "1.200+", icon: UserGroupIcon },
+  { label: "Waktu Follow-up", value: "< 24 Jam", icon: ClockIcon },
 ];
 
 export default function HomePage() {
@@ -42,6 +56,17 @@ export default function HomePage() {
             </ol>
           </div>
         </div>
+        <div className="container quick-stats">
+          {stats.map((item) => (
+            <article className="metric-card" key={item.label}>
+              <item.icon className="metric-icon" />
+              <div>
+                <p className="metric-value">{item.value}</p>
+                <p className="metric-label">{item.label}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section">
@@ -53,8 +78,9 @@ export default function HomePage() {
           />
           <div className="grid cards-4">
             {benefits.map((item) => (
-              <article key={item} className="card">
-                <p>{item}</p>
+              <article key={item.title} className="card">
+                <item.icon className="card-icon" />
+                <h3>{item.title}</h3>
               </article>
             ))}
           </div>
@@ -63,6 +89,9 @@ export default function HomePage() {
 
       <section className="section alt">
         <div className="container">
+          <div className="partner-strip">
+            <p>Mitra terpercaya: BSI, Muamalat, Mandiri Syariah, BNI Syariah</p>
+          </div>
           <SectionTitle
             eyebrow="Produk"
             title="Pilihan Program Tabungan"
