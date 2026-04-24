@@ -1,11 +1,13 @@
 import {
   BookOpenIcon,
   CalculatorIcon,
-  GlobeAltIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
+  EnvelopeIcon,
   HeartIcon,
   InformationCircleIcon,
-  PhoneIcon,
+  PaperAirplaneIcon,
   RectangleGroupIcon,
+  GlobeAltIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
@@ -32,6 +34,17 @@ export default function Footer() {
             Azizati.id adalah platform perencanaan tabungan haji dan umroh yang membantu
             Anda memilih produk syariah dengan lebih tenang, jelas, dan terarah.
           </p>
+          <div className="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="footer-social-icon" aria-label="Instagram">
+              <GlobeAltIcon className="footer-link-icon" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="footer-social-icon" aria-label="Facebook">
+              <ChatBubbleOvalLeftEllipsisIcon className="footer-link-icon" />
+            </a>
+            <a href="mailto:info@azizati.id" className="footer-social-icon" aria-label="Email">
+              <EnvelopeIcon className="footer-link-icon" />
+            </a>
+          </div>
         </div>
 
         <div>
@@ -59,31 +72,20 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="footer-title">Sosial & Kontak</p>
-          <div className="footer-link-list">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-              className="footer-link"
-            >
-              <GlobeAltIcon className="footer-link-icon" />
-              Instagram
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noreferrer"
-              className="footer-link"
-            >
-              <GlobeAltIcon className="footer-link-icon" />
-              Facebook
-            </a>
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" className="footer-link">
-              <PhoneIcon className="footer-link-icon" />
-              WhatsApp Kami
-            </a>
-          </div>
+          <p className="footer-title">Langganan Info Terbaru</p>
+          <p className="footer-text">
+            Dapatkan update seputar tabungan haji dan umroh, tips perencanaan, dan insight produk terbaru.
+          </p>
+          <form className="footer-subscribe-form" onSubmit={(e) => e.preventDefault()}>
+            <label className="footer-subscribe-label" htmlFor="footer-email">
+              Email
+            </label>
+            <input id="footer-email" type="email" placeholder="nama@email.com" className="footer-subscribe-input" />
+            <button type="submit" className="btn btn-primary btn-block">
+              <PaperAirplaneIcon className="btn-icon" />
+              Langganan
+            </button>
+          </form>
         </div>
       </div>
 

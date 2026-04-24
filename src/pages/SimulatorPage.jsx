@@ -14,6 +14,14 @@ import { useSimulatorStore } from "../store/simulatorStore";
 const formatRupiah = (value) =>
   new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(value);
 
+const formatCurrencyInput = (value) =>
+  `Rp ${new Intl.NumberFormat("id-ID").format(Number.isFinite(value) ? value : 0)}`;
+
+const parseCurrencyInput = (value) => {
+  const digits = value.replace(/[^\d]/g, "");
+  return digits ? Number(digits) : 0;
+};
+
 export default function SimulatorPage() {
   const {
     goalType,
@@ -32,6 +40,7 @@ export default function SimulatorPage() {
 
   const topRecommendation = result[0];
   const topBank = banks.find((entry) => entry.id === topRecommendation?.bankId);
+  const rangeProgress = ((targetYears - 1) / 9) * 100;
 
   return (
     <section className="section">
@@ -72,31 +81,31 @@ export default function SimulatorPage() {
               <label>
                 Estimasi Biaya Saat Ini
                 <input
-                  type="number"
-                  min={1000000}
-                  step={500000}
-                  value={totalCost}
-                  onChange={(e) => setTotalCost(Number(e.target.value))}
+                  type="text"
+                  inputMode="numeric"
+                  value={formatCurrencyInput(totalCost)}
+                  onChange={(e) => setTotalCost(parseCurrencyInput(e.target.value))}
                 />
               </label>
 
               <div>
                 <label>Target Waktu Keberangkatan</label>
-                <div className="range-head">
-                  <span>1 Tahun</span>
-                  <strong>{targetYears} Tahun</strong>
-                </div>
-                <input
-                  type="range"
-                  min={1}
-                  max={10}
-                  value={targetYears}
-                  onChange={(e) => setTargetYears(Number(e.target.value))}
-                  className="range-input"
-                />
-                <div className="range-foot">
-                  <span>1 Tahun</span>
-                  <span>10 Tahun</span>
+                <div className="range-slider-shell">
+                  <div className="range-tooltip" style={{ left: `${rangeProgress}%` }}>
+                    {targetYears} Tahun
+                  </div>
+                  <input
+                    type="range"
+                    min={1}
+                    max={10}
+                    value={targetYears}
+                    onChange={(e) => setTargetYears(Number(e.target.value))}
+                    className="range-input"
+                  />
+                  <div className="range-foot">
+                    <span>1 Tahun</span>
+                    <span>10 Tahun</span>
+                  </div>
                 </div>
               </div>
             </div>
