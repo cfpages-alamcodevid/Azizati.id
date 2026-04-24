@@ -1,86 +1,87 @@
 import { Link } from "react-router-dom";
-import SectionTitle from "../components/ui/SectionTitle";
 import {
-  BanknotesIcon,
-  ChartBarSquareIcon,
+  ArrowRightIcon,
+  BuildingLibraryIcon,
+  CalculatorIcon,
   CheckBadgeIcon,
-  ClockIcon,
-  ShieldCheckIcon,
-  UserGroupIcon,
+  UserPlusIcon,
 } from "@heroicons/react/24/outline";
+import { banks } from "../data/banks";
 
-const benefits = [
-  { title: "Sesuai prinsip syariah", icon: ShieldCheckIcon },
-  { title: "Pilihan bank mitra terverifikasi", icon: CheckBadgeIcon },
-  { title: "Simulasi tabungan cepat dan mudah", icon: ChartBarSquareIcon },
-  { title: "Pendampingan pendaftaran oleh tim Azizati", icon: UserGroupIcon },
-];
-
-const stats = [
-  { label: "Bank Mitra Syariah", value: "4+", icon: BanknotesIcon },
-  { label: "Lead Dibantu", value: "1.200+", icon: UserGroupIcon },
-  { label: "Waktu Follow-up", value: "< 24 Jam", icon: ClockIcon },
+const steps = [
+  {
+    title: "Simulasi Target",
+    desc: "Hitung setoran bulanan berdasarkan target keberangkatan Anda.",
+    icon: CalculatorIcon,
+  },
+  {
+    title: "Bandingkan Bank",
+    desc: "Lihat perbedaan fitur, biaya, dan keunggulan bank mitra syariah.",
+    icon: BuildingLibraryIcon,
+  },
+  {
+    title: "Daftar Praktis",
+    desc: "Kirim data diri dan tim Azizati akan bantu tindak lanjut pembukaan.",
+    icon: UserPlusIcon,
+  },
 ];
 
 export default function HomePage() {
   return (
     <>
       <section className="hero">
-        <div className="container hero-grid">
-          <div>
-            <p className="eyebrow">Platform Agregator Syariah</p>
+        <div className="container hero-grid hero-grid-refined">
+          <div className="hero-copy-wrap">
+            <p className="eyebrow">Platform Agregator Syariah #1</p>
             <h1>
               Nikmatnya Ibadah,
               <br />
-              Tenang Menabungnya.
+              <span className="text-gradient">Tenang Menabungnya.</span>
             </h1>
             <p className="hero-copy">
-              Rencanakan tabungan Haji dan Umroh dengan terstruktur, transparan, dan
-              sesuai kemampuan finansial Anda.
+              Rencanakan perjalanan Haji dan Umroh dengan tabungan terstruktur, transparan,
+              dan sesuai prinsip syariah.
             </p>
             <div className="cta-row">
               <Link to="/simulator" className="btn btn-primary">
                 Mulai Simulasi
               </Link>
               <Link to="/perbandingan-bank" className="btn btn-secondary">
-                Bandingkan Bank
+                Lihat Perbandingan Bank
               </Link>
             </div>
           </div>
-          <div className="highlight-card">
-            <p className="highlight-label">Cara Kerja</p>
-            <ol>
-              <li>Simulasikan target tabungan</li>
-              <li>Bandingkan produk bank syariah</li>
-              <li>Daftar dan dapatkan pendampingan</li>
-            </ol>
+          <div className="hero-visual-card">
+            <div className="hero-orb hero-orb-1" />
+            <div className="hero-orb hero-orb-2" />
+            <div className="hero-diamond" />
+            <div className="hero-badge">
+              <CheckBadgeIcon className="inline-icon" />
+              Nikmatnya Ibadah
+            </div>
           </div>
-        </div>
-        <div className="container quick-stats">
-          {stats.map((item) => (
-            <article className="metric-card" key={item.label}>
-              <item.icon className="metric-icon" />
-              <div>
-                <p className="metric-value">{item.value}</p>
-                <p className="metric-label">{item.label}</p>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 
-      <section className="section">
+      <section className="partner-band">
         <div className="container">
-          <SectionTitle
-            eyebrow="Keunggulan"
-            title="Kenapa Memilih Azizati.id"
-            description="Dirancang untuk mempermudah keputusan finansial ibadah Anda."
-          />
-          <div className="grid cards-4">
-            {benefits.map((item) => (
-              <article key={item.title} className="card">
-                <item.icon className="card-icon" />
-                <h3>{item.title}</h3>
+          <p>Dipercaya oleh bank syariah terkemuka: BSI, Muamalat, Mandiri Syariah, BNI Syariah</p>
+        </div>
+      </section>
+
+      <section className="section section-tight">
+        <div className="container">
+          <div className="section-title center">
+            <p className="eyebrow">Cara Kerja</p>
+            <h2>Langkah Mudah Menabung</h2>
+            <p>Wujudkan rencana ibadah dengan alur yang sederhana dan terarah.</p>
+          </div>
+          <div className="grid cards-3">
+            {steps.map((step) => (
+              <article className="card" key={step.title}>
+                <step.icon className="card-icon" />
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
               </article>
             ))}
           </div>
@@ -88,35 +89,70 @@ export default function HomePage() {
       </section>
 
       <section className="section alt">
+        <div className="container simulator-preview">
+          <article className="card">
+            <h3>Simulator Tabungan Cerdas</h3>
+            <p>
+              Sesuaikan tujuan, biaya, dan tenor tabungan Anda. Sistem akan memberikan estimasi
+              setoran bulanan dan rekomendasi bank yang relevan.
+            </p>
+            <ul className="list">
+              <li className="list-with-icon">
+                <CheckBadgeIcon className="list-icon" />
+                Input fleksibel sesuai kondisi finansial
+              </li>
+              <li className="list-with-icon">
+                <CheckBadgeIcon className="list-icon" />
+                Estimasi setoran per bulan otomatis
+              </li>
+              <li className="list-with-icon">
+                <CheckBadgeIcon className="list-icon" />
+                Rekomendasi bank syariah berdasarkan skenario
+              </li>
+            </ul>
+            <Link to="/simulator" className="btn btn-primary">
+              Coba Simulator
+            </Link>
+          </article>
+          <article className="card simulator-mini-card">
+            <h4>Kalkulator Umroh</h4>
+            <div className="sim-row">
+              <span>Target</span>
+              <strong>3 Tahun</strong>
+            </div>
+            <div className="sim-row">
+              <span>Estimasi Biaya</span>
+              <strong>Rp 38.000.000</strong>
+            </div>
+            <div className="sim-estimate">Rp 1.055.556 / bulan</div>
+          </article>
+        </div>
+      </section>
+
+      <section className="section section-tight">
         <div className="container">
-          <div className="partner-strip">
-            <p>Mitra terpercaya: BSI, Muamalat, Mandiri Syariah, BNI Syariah</p>
+          <div className="section-title center">
+            <p className="eyebrow">Perbandingan</p>
+            <h2>Pilih Bank Syariah Terbaik</h2>
           </div>
-          <SectionTitle
-            eyebrow="Produk"
-            title="Pilihan Program Tabungan"
-            description="Sesuaikan tujuan ibadah Anda dan pelajari detail tiap produk."
-          />
-          <div className="grid cards-2">
-            <article className="card">
-              <h3>Tabungan Haji</h3>
-              <p>
-                Fokus pada target jangka menengah sampai panjang dengan opsi setoran
-                rutin.
-              </p>
-              <Link to="/tabungan-haji" className="text-link">
-                Lihat detail tabungan haji
-              </Link>
-            </article>
-            <article className="card">
-              <h3>Tabungan Umroh</h3>
-              <p>
-                Skema fleksibel untuk target keberangkatan lebih cepat dan terukur.
-              </p>
-              <Link to="/tabungan-umroh" className="text-link">
-                Lihat detail tabungan umroh
-              </Link>
-            </article>
+          <div className="grid cards-4">
+            {banks.map((bank) => (
+              <article className="card bank-card-mini" key={bank.id}>
+                <h3>{bank.shortName}</h3>
+                <p className="muted">{bank.product}</p>
+                <ul className="list">
+                  {bank.strengths.slice(0, 2).map((item) => (
+                    <li className="list-with-icon" key={item}>
+                      <CheckBadgeIcon className="list-icon" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link className="text-link" to="/perbandingan-bank">
+                  Lihat detail <ArrowRightIcon className="inline-icon" />
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>

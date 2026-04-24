@@ -60,26 +60,27 @@ export default function RegistrationPage() {
   return (
     <section className="section">
       <div className="container">
-        <SectionTitle
-          eyebrow="Pendaftaran"
-          title="Buka Rekening dalam 3 Langkah"
-          description="Form ini untuk lead generation. Data akan ditindaklanjuti tim Azizati."
-        />
+        <div className="wizard-shell">
+          <SectionTitle
+            eyebrow="Pendaftaran"
+            title="Mulai Perjalanan Suci Anda"
+            description="Lengkapi data diri Anda untuk mendapatkan simulasi dan penawaran terbaik."
+          />
 
-        <div className="stepper">
-          {steps.map((label, index) => (
-            <div key={label} className={`step ${step >= index + 1 ? "active" : ""}`}>
-              {(() => {
-                const Icon = stepIcons[index];
-                return <Icon className="step-icon" />;
-              })()}
-              <span>{index + 1}</span>
-              <p>{label}</p>
-            </div>
-          ))}
-        </div>
+          <div className="stepper">
+            {steps.map((label, index) => (
+              <div key={label} className={`step ${step >= index + 1 ? "active" : ""}`}>
+                {(() => {
+                  const Icon = stepIcons[index];
+                  return <Icon className="step-icon" />;
+                })()}
+                <span>{index + 1}</span>
+                <p>{label}</p>
+              </div>
+            ))}
+          </div>
 
-        <article className="card form-card">
+          <article className="card form-card">
           {step === 1 ? (
             <div className="form-stack">
               <h3 className="card-title-with-icon">
@@ -228,7 +229,8 @@ export default function RegistrationPage() {
               </button>
             )}
           </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
   );

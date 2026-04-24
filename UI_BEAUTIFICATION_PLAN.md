@@ -1,110 +1,87 @@
-# UI Beautification Plan - Azizati.id
+# UI Beautification Plan - Azizati.id (Revised After `.stitch` Audit)
 
 ## Tujuan
 
-1. Membuat tampilan lebih premium, lebih berisi (tidak tipis), dan lebih hidup.
-2. Menambahkan iconography agar scanning informasi lebih cepat.
-3. Menyatukan gaya visual antar halaman agar konsisten.
-4. Membuat footer kaya informasi (brand, produk, halaman statis, sosial).
+1. Menyamakan kualitas visual situs dengan referensi `.stitch`.
+2. Membuat tampilan lebih “premium clean”: berisi, jelas hierarchy, tapi tetap lega.
+3. Memperkuat storytelling per halaman (bukan hanya kumpulan card).
+4. Menjaga konsistensi logo, warna emas, dan tone syariah-modern.
 
-## Prinsip Visual
+## Audit Gap vs `.stitch`
 
-1. Depth lebih kuat:
-- Shadow lebih tegas, border kontras halus, panel layered.
+## 1) Beranda
 
-2. Komposisi lebih padat:
-- Tambah blok informasi pendukung per halaman (stat, highlights, CTA).
+Gap:
+1. Hero belum punya focal visual kanan sekuat `.stitch`.
+2. Partner trust strip belum setegas referensi.
+3. Struktur narasi belum lengkap (hero -> partner -> langkah -> simulator preview -> bank cards).
 
-3. Icon-first UI:
-- Heroicons dipakai untuk benefit, langkah, list, tautan penting.
+Aksi:
+1. Tambah hero visual panel kanan.
+2. Tambah partner strip center.
+3. Tambah section “Langkah Mudah Menabung” dan “Preview Simulator”.
 
-4. Konsistensi:
-- Sistem kelas global untuk card besar, section heading, badge, link list, dan footer columns.
+## 2) Simulator
 
-## Rencana Per Halaman
+Gap:
+1. Split layout kiri kalkulator, kanan hasil masih kurang tegas.
+2. Angka estimasi belum jadi visual anchor utama.
 
-## 1) Beranda (`/`)
+Aksi:
+1. Pertegas layout kalkulator kiri + insight kanan.
+2. Tambah estimate panel besar + featured bank card.
 
-Improvement:
-1. Hero jadi dua layer: konten utama + panel highlight.
-2. Tambah quick stats (bank mitra, lead dibantu, SLA follow-up).
-3. Benefit cards dengan icon.
-4. Partner strip lebih visual.
-5. Produk card dengan CTA berikon.
+## 3) Perbandingan Bank
 
-## 2) Simulator (`/simulator`)
+Gap:
+1. Referensi `.stitch` menonjolkan 4 card bank seragam untuk scan cepat.
+2. Label/value per card di situs sekarang belum sejelas referensi.
 
-Improvement:
-1. Input panel lebih “tool-like”.
-2. Ringkasan parameter aktif (tujuan, tenor, biaya) di side summary.
-3. Card rekomendasi bank dengan icon + hierarchy jelas.
-4. Microcopy hasil simulasi lebih informatif.
+Aksi:
+1. Tambah bank card grid 4 kolom yang seragam.
+2. Format konten card dengan meta label + value + CTA tombol.
 
-## 3) Perbandingan Bank (`/perbandingan-bank`)
+## 4) Pendaftaran
 
-Improvement:
-1. Table tetap dipertahankan untuk detail.
-2. Tambah overview cards (fitur unggulan tiap bank) agar lebih mudah dipahami.
-3. Strength list pakai icon checklist.
+Gap:
+1. Wizard belum cukup fokus secara layout.
+2. Referensi punya card center dengan top accent yang sangat jelas.
 
-## 4) Pendaftaran (`/pendaftaran`)
+Aksi:
+1. Bungkus wizard dalam panel center (max width).
+2. Tambah header wizard dan perhalus stepper.
 
-Improvement:
-1. Stepper lebih tebal dan readable.
-2. Setiap langkah ada icon.
-3. Form card lebih besar, spacing lebih lega.
-4. Feedback sukses/error lebih kontras.
+## 5) Product Pages (Haji/Umroh)
 
-## 5) Edukasi (`/edukasi`)
+Gap:
+1. Hero produk belum sekuat referensi (visual panel dominan).
+2. Keunggulan produk butuh layout 3 card seperti referensi.
 
-Improvement:
-1. Syarat pendaftaran jadi checklist berikon.
-2. FAQ jadi accordion style dengan indikasi expand/collapse.
-3. Tambah panel CTA untuk lanjut simulasi.
+Aksi:
+1. Tambah hero split dengan visual panel.
+2. Tambah grid keunggulan 3 card.
 
-## 6) Product Pages (`/tabungan-haji`, `/tabungan-umroh`)
+## 6) Footer
 
-Improvement:
-1. Hero produk dengan panel highlight.
-2. Keunggulan program berikon.
-3. Tambah “apa yang kamu dapatkan” di card kedua (bukan hanya CTA).
+Gap:
+1. Footer harus kaya informasi, tapi harus tetap rapi dan tidak berat.
 
-## 7) Layout Global
+Aksi:
+1. Pertahankan struktur lengkap (tentang kami, produk, statis, sosial).
+2. Rapikan density, spacing, dan kontras agar terasa clean seperti `.stitch`.
 
-Improvement:
-1. Navbar:
-- Hover states lebih hidup, CTA lebih menonjol, spacing lebih matang.
+## Komponen/Asset yang Dipakai
 
-2. Footer baru (multi-column):
-- Tentang kami: logo + brief deskripsi.
-- Link produk (dengan icon).
-- Link halaman statis penting.
-- Link sosial (dengan icon).
-- Bottom bar (copyright + legal shortcut).
+1. Heroicons untuk iconography utama.
+2. Existing logo `public/images/azizati-logo.png`.
+3. CSS pattern/gradient dekoratif (tanpa menambah noise visual).
 
-## Komponen/Asset yang Ditambah
+## Urutan Implementasi Revisi
 
-1. Dependency icon:
-- `@heroicons/react`
-
-2. Footer structure:
-- section brand
-- section produk
-- section halaman penting
-- section sosial + kontak
-
-3. CSS utilities baru:
-- premium card variant
-- metric cards
-- icon row/list
-- footer grid system
-
-## Urutan Implementasi
-
-1. Install Heroicons.
-2. Refactor Footer (multi-column + icon links).
-3. Upgrade Home, Simulator, Comparison.
-4. Upgrade Registration + Education.
-5. Upgrade ProductPageTemplate.
-6. Refresh stylesheet global + responsive tuning.
+1. Refactor beranda agar urutannya mendekati `.stitch`.
+2. Refactor simulator ke split-layout yang lebih tegas.
+3. Tambah bank card matrix pada perbandingan.
+4. Refactor pendaftaran jadi wizard-shell terpusat.
+5. Perkuat product pages dengan hero visual + 3 keunggulan.
+6. Rapikan footer dan tuning global CSS.
 7. Build verification.

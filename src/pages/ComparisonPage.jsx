@@ -1,11 +1,9 @@
+import { BuildingLibraryIcon, CheckBadgeIcon } from "@heroicons/react/24/outline";
 import SectionTitle from "../components/ui/SectionTitle";
 import { banks } from "../data/banks";
-import { CheckBadgeIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
 
 const formatRupiah = (value) =>
-  new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(
-    value,
-  );
+  new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(value);
 
 export default function ComparisonPage() {
   return (
@@ -13,28 +11,50 @@ export default function ComparisonPage() {
       <div className="container">
         <SectionTitle
           eyebrow="Perbandingan"
-          title="Bandingkan Bank Syariah"
-          description="Ringkasan produk agar Anda bisa memilih bank yang paling sesuai kebutuhan."
+          title="Perbandingan Bank Syariah"
+          description="Temukan mitra perbankan yang paling sesuai dengan rencana tabungan Haji dan Umroh Anda."
         />
 
-        <div className="grid cards-2 comparison-highlight-grid">
-          <article className="card">
-            <h3 className="card-title-with-icon">
-              <CheckBadgeIcon className="card-icon-sm" />
-              Semua Mitra Terverifikasi
-            </h3>
-            <p>Bank pada platform Azizati dipilih berdasarkan rekam layanan syariah.</p>
-          </article>
-          <article className="card">
-            <h3 className="card-title-with-icon">
-              <CurrencyDollarIcon className="card-icon-sm" />
-              Transparansi Biaya
-            </h3>
-            <p>Kamu bisa membandingkan setoran, fitur, dan keunggulan bank secara jelas.</p>
-          </article>
+        <div className="grid cards-4">
+          {banks.map((bank) => (
+            <article key={bank.id} className="card compare-bank-card">
+              <div className="compare-top">
+                <BuildingLibraryIcon className="card-icon-sm" />
+                <span className="compare-chip">Premium</span>
+              </div>
+              <h3>{bank.name}</h3>
+              <p className="muted">{bank.suitableFor}</p>
+
+              <div className="compare-meta">
+                <p className="meta-label">Tipe</p>
+                <p>Umum</p>
+              </div>
+              <div className="compare-meta">
+                <p className="meta-label">Setoran Awal</p>
+                <p>{formatRupiah(bank.minSetoran)}</p>
+              </div>
+              <div className="compare-meta">
+                <p className="meta-label">Produk Utama</p>
+                <p>{bank.product}</p>
+              </div>
+              <div className="compare-meta">
+                <p className="meta-label">Topik Dibahas</p>
+                {bank.strengths.map((item) => (
+                  <p className="list-with-icon" key={item}>
+                    <CheckBadgeIcon className="list-icon" />
+                    {item}
+                  </p>
+                ))}
+              </div>
+
+              <button type="button" className="btn btn-secondary btn-block">
+                Pilih Bank Ini
+              </button>
+            </article>
+          ))}
         </div>
 
-        <div className="table-wrap">
+        <div className="table-wrap section-gap-top">
           <table className="comparison-table">
             <thead>
               <tr>
@@ -57,23 +77,6 @@ export default function ComparisonPage() {
               ))}
             </tbody>
           </table>
-        </div>
-
-        <div className="grid cards-2">
-          {banks.map((bank) => (
-            <article key={bank.id} className="card">
-              <h3>{bank.name}</h3>
-              <p>{bank.suitableFor}</p>
-              <ul className="list">
-                {bank.strengths.map((item) => (
-                  <li key={item} className="list-with-icon">
-                    <CheckBadgeIcon className="list-icon" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
         </div>
       </div>
     </section>
