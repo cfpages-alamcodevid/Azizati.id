@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="footer-column">
           <p className="footer-title">Produk</p>
           <div className="footer-link-list">
             {productLinks.map((item) => (
@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="footer-column">
           <p className="footer-title">Halaman Penting</p>
           <div className="footer-link-list">
             {staticLinks.map((item) => (
@@ -71,7 +71,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="footer-column footer-subscribe-column">
           <p className="footer-title">Langganan Info Terbaru</p>
           <p className="footer-text">
             Dapatkan update seputar tabungan haji dan umroh, tips perencanaan, dan insight produk terbaru.
