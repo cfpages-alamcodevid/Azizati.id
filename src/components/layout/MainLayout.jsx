@@ -4,9 +4,9 @@ import Navbar from "./Navbar";
 
 export default function MainLayout() {
   return (
-    <div className="site-shell">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="site-main">
+      <main className="flex-1 pt-20">
         <Outlet />
       </main>
       <Footer />
