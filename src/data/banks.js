@@ -1,13 +1,13 @@
 export const travelPackages = {
   umroh: [
     {
-      id: "umroh-economy",
-      name: "Paket Umroh Economy",
-      category: "murah",
+      id: "umroh-basic",
+      name: "Paket Umroh Basic",
+      tier: "basic",
       price: 28000000,
       fasilitas: [
-        "Hotel bintang 3 jarak 500m-1km Masjidil Haram",
-        "Sekamar twin sharing",
+        "Hotel bintang 3 (jarak 500m-1km Masjidil Haram)",
+        "Kamar twin sharing",
         "Sarapan pagi",
         "Transport ACI",
         "Pembimbing perjalanan",
@@ -19,27 +19,27 @@ export const travelPackages = {
     {
       id: "umroh-standard",
       name: "Paket Umroh Standard",
-      category: "normal",
+      tier: "standard",
       price: 38000000,
       fasilitas: [
-        "Hotel bintang 4 jarak 200-500m Masjidil Haram",
-        "Sekamar twin sharing",
+        "Hotel bintang 4 (jarak 200-500m Masjidil Haram)",
+        "Kamar twin sharing",
         "Sarapan + makan siang",
         "Transport AC",
-        "Pembimbing pengalaman",
+        "Pembimbing berpengalaman",
         "Grup berangkat minimal 15 orang",
       ],
       penerbangan: "Pesawat kelas ekonomi",
       included: ["Visa umroh", "Handling", "Manasik", "Ziarah", "Tour leader"],
     },
     {
-      id: "umroh-premium",
-      name: "Paket Umroh Premium",
-      category: "mahal",
+      id: "umroh-executive",
+      name: "Paket Umroh Executive",
+      tier: "executive",
       price: 55000000,
       fasilitas: [
-        "Hotel bintang 5 jarak <200m Masjidil Haram",
-        "Sekamar twin sharing/king bed",
+        "Hotel bintang 5 (jarak <200m Masjidil Haram)",
+        "Kamar twin sharing/king bed",
         "Full board (3x makan)",
         "Transport private",
         "Tour leader eksklusif",
@@ -51,13 +51,13 @@ export const travelPackages = {
   ],
   haji: [
     {
-      id: "haji-economy",
-      name: "Paket Haji Economy",
-      category: "murah",
+      id: "haji-basic",
+      name: "Paket Haji Basic",
+      tier: "basic",
       price: 45000000,
       fasilitas: [
         "Hotel bintang 3",
-        "Sekamar twin sharing",
+        "Kamar twin sharing",
         "Transportasi grup",
         "Pembimbing",
       ],
@@ -67,11 +67,11 @@ export const travelPackages = {
     {
       id: "haji-standard",
       name: "Paket Haji Standard",
-      category: "normal",
+      tier: "standard",
       price: 56000000,
       fasilitas: [
         "Hotel bintang 4",
-        "Sekamar twin sharing",
+        "Kamar twin sharing",
         "Transport AC",
         "Tour leader",
       ],
@@ -79,13 +79,13 @@ export const travelPackages = {
       included: ["Visa Haji", "Handling", "Manasik", "Ziarah"],
     },
     {
-      id: "haji-premium",
-      name: "Paket Haji Premium",
-      category: "mahal",
+      id: "haji-executive",
+      name: "Paket Haji Executive",
+      tier: "executive",
       price: 85000000,
       fasilitas: [
         "Hotel bintang 5",
-        "Suite/Sekamar premium",
+        "Suite/kamar premium",
         "Transport private",
         "Tour leader eksklusif",
       ],
@@ -93,6 +93,18 @@ export const travelPackages = {
       included: ["Visa Haji", "Handling", "Manasik", "Ziarah", "Porter", "Layanan 24/7"],
     },
   ],
+};
+
+export const tierLabels = {
+  basic: "Basic",
+  standard: "Standard",
+  executive: "Executive",
+};
+
+export const tierColors = {
+  basic: "text-blue-700",
+  standard: "text-amber-700",
+  executive: "text-purple-700",
 };
 
 export const banks = [
@@ -105,7 +117,7 @@ export const banks = [
     adminFee: 0,
     strengths: [
       "Jaringan luas nasional",
-      "Fitur tabungan haji prioritas",
+      "Fitur tabungan Haji prioritas",
       "Integrasi ekosistem syariah",
     ],
     suitableFor: "Nasabah yang ingin layanan komprehensif dan skala nasional.",
@@ -118,16 +130,16 @@ export const banks = [
     minSetoran: 100000,
     adminFee: 0,
     strengths: [
-      "Paket cicilan umroh",
-      "Asuransi perjalanan opsi tambahan",
+      "Paket cicilan Umroh",
+      "Asuransi perjalanan (opsional)",
       "Program promo travel tertentu",
     ],
-    suitableFor: "Nasabah yang fokus paket umroh fleksibel dan cicilan.",
+    suitableFor: "Nasabah yang fokus paket Umroh fleksibel dan cicilan.",
   },
   {
     id: "mandiri-syariah",
-    name: "Mandiri Syedariah",
-    shortName: "Mandiri Syedariah",
+    name: "Mandiri Syariah",
+    shortName: "Mandiri Syariah",
     product: "Tabungan Mabrur",
     minSetoran: 100000,
     adminFee: 0,
@@ -136,8 +148,8 @@ export const banks = [
   },
   {
     id: "bni-syariah",
-    name: "BNI Syedariah",
-    shortName: "BNI Syedariah",
+    name: "BNI Syariah",
+    shortName: "BNI Syariah",
     product: "Tabungan Baitullah iB Hasanah",
     minSetoran: 100000,
     adminFee: 0,
