@@ -287,29 +287,39 @@ export default function SimulatorPage() {
               </div>
             </article>
 
-            <article className="bg-gradient-to-b from-[#133048] to-[#11263a] rounded-xl p-4">
-              <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/95 text-xs font-bold text-[#5d533f] mb-3">
-                <SparklesIcon className="w-3 h-3" />
-                Mitra Rekomendasi
+            <article className="bg-white rounded-xl p-4 border-2 border-amber-400 shadow-lg relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-amber-400/20 rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="relative">
+                <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-amber-100 text-xs font-bold text-amber-800 mb-3">
+                  <SparklesIcon className="w-3 h-3" />
+                  Mitra Rekomendasi
+                </div>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center">
+                    <LockClosedIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-text-heading">
+                      {topBank?.name ?? "Bank Mitra"}
+                    </h3>
+                    <p className="text-sm text-amber-700 font-medium">
+                      Rekomendasi Utama
+                    </p>
+                  </div>
+                </div>
+                <p className="text-sm text-text-body mb-3">
+                  {topRecommendation?.reason ??
+                    "Jalankan simulasi untuk melihat rekomendasi."}
+                </p>
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center gap-2 w-full px-3 py-2.5 rounded-lg font-bold bg-gradient-to-r from-[#eedc82] via-[#cfa93f] to-[#8f6c18] text-[#241d0f] hover:brightness-110 transition-all"
+                >
+                  <BanknotesIcon className="w-4 h-4" />
+                  Buka Rekening Sekarang
+                  <ArrowRightIcon className="w-4 h-4" />
+                </button>
               </div>
-              <div className="min-h-[140px] border border-[#eedc82]/45 rounded-xl relative overflow-hidden bg-[radial-gradient(circle_at_50%_20%,rgba(238,220,130,0.3),transparent_40%)]">
-                <LockClosedIcon className="w-10 h-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#f2d782]" />
-              </div>
-              <h3 className="text-base font-bold text-[#172431] mt-2">
-                {topBank?.name ?? "Bank Mitra"}
-              </h3>
-              <p className="text-sm text-[#34485b]">
-                {topRecommendation?.reason ??
-                  "Jalankan simulasi untuk melihat rekomendasi."}
-              </p>
-              <button
-                type="button"
-                className="inline-flex items-center gap-1 px-3 py-2 rounded-lg font-bold border border-[#d7c29a] text-[#2a2213] hover:bg-[#fbf1db] transition-all mt-2"
-              >
-                <BanknotesIcon className="w-4 h-4" />
-                Buka Rekening Sekarang
-                <ArrowRightIcon className="w-4 h-4" />
-              </button>
             </article>
           </div>
         </div>
