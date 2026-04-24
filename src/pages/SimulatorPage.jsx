@@ -8,44 +8,43 @@ import {
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 import SectionTitle from "../components/ui/SectionTitle";
-import { banks } from "../data/banks";
+import { banks, travelPackages, dpOptions } from "../data/banks";
 import { useSimulatorStore } from "../store/simulatorStore";
 
 const formatRupiah = (value) =>
   new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
+    maximumFractionDigits: 0,
   }).format(value);
-
-const formatCurrencyInput = (value) =>
-  `Rp ${new Intl.NumberFormat("id-ID").format(
-    Number.isFinite(value) ? value : 0
-  )}`;
-
-const parseCurrencyInput = (value) => {
-  const digits = value.replace(/[^\d]/g, "");
-  return digits ? Number(digits) : 0;
-};
 
 export default function SimulatorPage() {
   const {
     goalType,
     targetYears,
     totalCost,
+    packageId,
+    dpAmount,
     result,
     setGoalType,
     setTargetYears,
-    setTotalCost,
+    setPackageId,
+    setDpAmount,
     runSimulation,
   } = useSimulatorStore();
 
   useEffect(() => {
     runSimulation();
-  }, [goalType, targetYears, totalCost, runSimulation]);
+  }, [goalType, targetYears, totalCost, packageId, dpAmount, runSimulation]);
 
+  const packages = travelPackages[goalType] || [];
+  
   const topRecommendation = result[0];
   const topBank = banks.find((entry) => entry.id === topRecommendation?.bankId);
   const rangeProgress = ((targetYears - 1) / 9) * 100;
+  
+  const selectedPackage = packages.find((p) => p.id === packageId);
+  const effectiveCost = Math.max(totalCost - dpAmount, 0);
 
   return (
     <section className="py-20">
@@ -95,18 +94,58 @@ export default function SimulatorPage() {
                 </div>
               </div>
 
-              <label className="block">
-                <span className="block text-sm font-medium text-text-body mb-2">
-                  Estimasi Biaya Saat Ini
-                </span>
-                <input
-                  type="text"
-                  inputMode="numeric"
-                  value={formatCurrencyInput(totalCost)}
-                  onChange={(e) => setTotalCost(parseCurrencyInput(e.target.value))}
-                  className="w-full border border-[#e8dcc6] rounded-lg px-3 py-2.5 bg-[#fbfaf8] focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-600"
-                />
-              </label>
+              <div>
+                <label className="block text-sm font-medium text-text-body mb-2">
+                  Pilih Paket Travel
+                </label>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                  {packages.map((pkg) => (
+                    <button
+                      key={pkg.id}
+                      type="button"
+                      onClick={() => setPackageId(pkg.id)}
+                      className={`p-3 rounded-lg border text-left transition-all ${
+                        packageId === pkg.id
+                          ? "bg-amber-50 border-amber-600 ring-2 ring-amber-500/30"
+                          : "bg-white border-[#e8dcc6] hover:border-amber-400"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between mb-1">
+                        <span className={`text-xs font-bold uppercase tracking-wider ${
+                          pkg.category === "murah" ? "text-green-700" :
+                          pkg.category === "normal" ? "text-amber-700" :
+                          "text-purple-700"
+                        }`}>
+                          {pkg.category}
+                        </span>
+                        <span className="text-xs font-bold text-text-heading">
+                          {formatRupiah(pkg.price)}
+                        </span>
+                      </div>
+                      <p className="text-sm font-bold text-text-heading line-clamp-2">
+                        {pkg.name}
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-text-body mb-2">
+                  DP (Uang Muka) Awal
+                </label>
+                <select
+                  value={dpAmount}
+                  onChange={(e) => setDpAmount(Number(e.target.value))}
+                  className="w-full border border-[#e8dcc6] rounded-lg px-3 py-2.5 bg-[#fbfaf8] focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+                >
+                  {dpOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
 
               <div>
                 <label className="block text-sm font-medium text-text-body mb-2">
@@ -146,10 +185,22 @@ export default function SimulatorPage() {
                   ? formatRupiah(topRecommendation.monthlyContribution)
                   : "Rp 0"}
               </p>
-              <p className="text-sm text-text-body mt-1">
-                Perhitungan ini bersifat estimasi sesuai parameter input Anda
-                saat ini.
-              </p>
+              <div className="mt-3 pt-3 border-t border-dashed border-[#e5d6b6] grid gap-1 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-text-body">Harga Paket</span>
+                  <span className="font-medium">{formatRupiah(totalCost)}</span>
+                </div>
+                {dpAmount > 0 && (
+                  <div className="flex justify-between text-green-700">
+                    <span>DP (dibayar diawal)</span>
+                    <span className="font-medium">-{formatRupiah(dpAmount)}</span>
+                  </div>
+                )}
+                <div className="flex justify-between font-bold text-text-heading">
+                  <span>Total Ditabung</span>
+                  <span>{formatRupiah(effectiveCost)}</span>
+                </div>
+              </div>
             </article>
 
             <article className="bg-gradient-to-b from-[#133048] to-[#11263a] rounded-xl p-4">
@@ -178,6 +229,42 @@ export default function SimulatorPage() {
             </article>
           </div>
         </div>
+
+        {selectedPackage && (
+          <article className="mt-6 bg-white border border-[#e6d7ba] rounded-xl p-4 shadow-soft">
+            <h4 className="text-sm font-bold text-text-heading mb-3">
+              Detail Paket: {selectedPackage.name}
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div>
+                <p className="font-semibold text-text-heading mb-1">Fasilitas</p>
+                <ul className="grid gap-1 text-text-body">
+                  {selectedPackage.fasilitas.map((item, i) => (
+                    <li key={i} className="inline-flex items-start gap-1">
+                      <CheckBadgeIcon className="w-3 h-3 text-green-600 mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-text-heading mb-1">Penerbangan</p>
+                <p className="text-text-body">{selectedPackage.penerbangan}</p>
+              </div>
+              <div>
+                <p className="font-semibold text-text-heading mb-1">Termasuk</p>
+                <ul className="grid gap-1 text-text-body">
+                  {selectedPackage.included.map((item, i) => (
+                    <li key={i} className="inline-flex items-start gap-1">
+                      <CheckBadgeIcon className="w-3 h-3 text-green-600 mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
           {result.slice(0, 3).map((item) => {

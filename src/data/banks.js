@@ -1,3 +1,100 @@
+export const travelPackages = {
+  umroh: [
+    {
+      id: "umroh-economy",
+      name: "Paket Umroh Economy",
+      category: "murah",
+      price: 28000000,
+      fasilitas: [
+        "Hotel bintang 3 jarak 500m-1km Masjidil Haram",
+        "Sekamar twin sharing",
+        "Sarapan pagi",
+        "Transport ACI",
+        "Pembimbing perjalanan",
+        "Grup berangkat minimal 25 orang",
+      ],
+      penerbangan: "Pesawat charter/ekonomi",
+      included: ["Visa umroh", "Handling", "Manasik"],
+    },
+    {
+      id: "umroh-standard",
+      name: "Paket Umroh Standard",
+      category: "normal",
+      price: 38000000,
+      fasilitas: [
+        "Hotel bintang 4 jarak 200-500m Masjidil Haram",
+        "Sekamar twin sharing",
+        "Sarapan + makan siang",
+        "Transport AC",
+        "Pembimbing pengalaman",
+        "Grup berangkat minimal 15 orang",
+      ],
+      penerbangan: "Pesawat kelas ekonomi",
+      included: ["Visa umroh", "Handling", "Manasik", "Ziarah", "Tour leader"],
+    },
+    {
+      id: "umroh-premium",
+      name: "Paket Umroh Premium",
+      category: "mahal",
+      price: 55000000,
+      fasilitas: [
+        "Hotel bintang 5 jarak <200m Masjidil Haram",
+        "Sekamar twin sharing/king bed",
+        "Full board (3x makan)",
+        "Transport private",
+        "Tour leader eksklusif",
+        "Private trip",
+      ],
+      penerbangan: "Pesawat kelas bisnis",
+      included: ["Visa umroh", "Handling", "Manasik", "Ziarah", "Tour leader", "Porter", "Makanan halal 24/7"],
+    },
+  ],
+  haji: [
+    {
+      id: "haji-economy",
+      name: "Paket Haji Economy",
+      category: "murah",
+      price: 45000000,
+      fasilitas: [
+        "Hotel bintang 3",
+        "Sekamar twin sharing",
+        "Transportasi grup",
+        "Pembimbing",
+      ],
+      penerbangan: "Pesawat kelas ekonomi",
+      included: ["Visa Haji", "Handling", "Manasik"],
+    },
+    {
+      id: "haji-standard",
+      name: "Paket Haji Standard",
+      category: "normal",
+      price: 56000000,
+      fasilitas: [
+        "Hotel bintang 4",
+        "Sekamar twin sharing",
+        "Transport AC",
+        "Tour leader",
+      ],
+      penerbangan: "Pesawat kelas ekonomi",
+      included: ["Visa Haji", "Handling", "Manasik", "Ziarah"],
+    },
+    {
+      id: "haji-premium",
+      name: "Paket Haji Premium",
+      category: "mahal",
+      price: 85000000,
+      fasilitas: [
+        "Hotel bintang 5",
+        "Suite/Sekamar premium",
+        "Transport private",
+        "Tour leader eksklusif",
+      ],
+      penerbangan: "Pesawat kelas bisnis",
+      included: ["Visa Haji", "Handling", "Manasik", "Ziarah", "Porter", "Layanan 24/7"],
+    },
+  ],
+};
+
 export const banks = [
   {
     id: "bsi",
@@ -29,8 +126,8 @@ export const banks = [
   },
   {
     id: "mandiri-syariah",
-    name: "Mandiri Syariah",
-    shortName: "Mandiri Syariah",
+    name: "Mandiri Syedariah",
+    shortName: "Mandiri Syedariah",
     product: "Tabungan Mabrur",
     minSetoran: 100000,
     adminFee: 0,
@@ -39,8 +136,8 @@ export const banks = [
   },
   {
     id: "bni-syariah",
-    name: "BNI Syariah",
-    shortName: "BNI Syariah",
+    name: "BNI Syedariah",
+    shortName: "BNI Syedariah",
     product: "Tabungan Baitullah iB Hasanah",
     minSetoran: 100000,
     adminFee: 0,
@@ -54,6 +151,17 @@ export const banks = [
 ];
 
 export const costReference = {
-  haji: 56000000,
+  Haji: 56000000,
   umroh: 38000000,
 };
+
+export const dpOptions = [
+  { label: "Tanpa DP", value: 0 },
+  { label: "Rp 1.000.000", value: 1000000 },
+  { label: "Rp 2.500.000", value: 2500000 },
+  { label: "Rp 5.000.000", value: 5000000 },
+  { label: "Rp 7.500.000", value: 7500000 },
+  { label: "Rp 10.000.000", value: 10000000 },
+  { label: "Rp 15.000.000", value: 15000000 },
+  { label: "Rp 20.000.000", value: 20000000 },
+];
