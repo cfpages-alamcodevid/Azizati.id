@@ -4,5 +4,5 @@ pages_build_output_dir = "dist"
 
 [[d1_databases]]
 binding = "AZIZATI_DB"
-database_name = "azizati-db"
-database_id = "PASTE_YOUR_D1_DATABASE_ID_HERE"
+database_name = "azizati-id"
+database_id = "9546438a-10a5-4aec-b9b4-ea2704ae9e7e"
