@@ -45,11 +45,13 @@ export default function SimulatorPage() {
   return (
     <section className="section">
       <div className="container">
-        <SectionTitle
-          eyebrow="Simulator"
-          title="Rencanakan Perjalanan Suci"
-          description="Ketahui estimasi setoran bulanan Anda untuk mencapai target ibadah Haji atau Umroh dengan presisi."
-        />
+<div className="section-title center">
+          <SectionTitle
+            eyebrow="Simulator"
+            title="Rencanakan Perjalanan Suci"
+            description="Ketahui estimasi setoran bulanan Anda untuk mencapai target ibadah Haji atau Umroh dengan presisi."
+          />
+        </div>
 
         <div className="simulator-layout">
           <article className="card simulator-main-card">

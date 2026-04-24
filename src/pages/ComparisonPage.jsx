@@ -9,11 +9,13 @@ export default function ComparisonPage() {
   return (
     <section className="section">
       <div className="container">
-        <SectionTitle
-          eyebrow="Perbandingan"
-          title="Perbandingan Bank Syariah"
-          description="Temukan mitra perbankan yang paling sesuai dengan rencana tabungan Haji dan Umroh Anda."
-        />
+        <div className="section-title center">
+          <SectionTitle
+            eyebrow="Perbandingan"
+            title="Perbandingan Bank Syariah"
+            description="Temukan mitra perbankan yang paling sesuai dengan rencana tabungan Haji dan Umroh Anda."
+          />
+        </div>
 
         <div className="grid cards-4">
           {banks.map((bank) => (

@@ -31,11 +31,13 @@ export default function EducationPage() {
   return (
     <section className="section">
       <div className="container">
-        <SectionTitle
-          eyebrow="Edukasi"
-          title="Syarat & FAQ Tabungan Ibadah"
-          description="Informasi dasar sebelum Anda memulai pendaftaran."
-        />
+        <div className="section-title center">
+          <SectionTitle
+            eyebrow="Edukasi"
+            title="Syarat & FAQ Tabungan Ibadah"
+            description="Informasi dasar sebelum Anda memulai pendaftaran."
+          />
+        </div>
 
         <div className="grid cards-2">
           <article className="card">

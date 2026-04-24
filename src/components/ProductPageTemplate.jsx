@@ -25,7 +25,9 @@ export default function ProductPageTemplate({
       <div className="container">
         <div className="product-hero-grid">
           <div>
-            <SectionTitle eyebrow={eyebrow} title={title} description={description} />
+            <div className="section-title center">
+              <SectionTitle eyebrow={eyebrow} title={title} description={description} />
+            </div>
             <div className="cta-row">
               <Link to="/simulator" className="btn btn-primary">
                 {ctaText}

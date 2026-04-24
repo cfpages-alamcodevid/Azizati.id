@@ -64,11 +64,13 @@ export default function RegistrationPage() {
     <section className="section">
       <div className="container">
         <div className="wizard-shell">
+          <div className="section-title center">
           <SectionTitle
             eyebrow="Pendaftaran"
             title="Mulai Perjalanan Suci Anda"
             description="Lengkapi data diri Anda untuk mendapatkan simulasi dan penawaran terbaik."
           />
+        </div>
 
           <div className="stepper">
             {steps.map((label, index) => {
