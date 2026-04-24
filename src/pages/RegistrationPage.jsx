@@ -4,6 +4,7 @@ import { banks } from "../data/banks";
 import { useRegistrationStore } from "../store/registrationStore";
 import {
   BuildingLibraryIcon,
+  ChevronRightIcon,
   CheckCircleIcon,
   IdentificationIcon,
   Squares2X2Icon,
@@ -23,11 +24,13 @@ export default function RegistrationPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [submitSuccess, setSubmitSuccess] = useState("");
+  const [consentChecked, setConsentChecked] = useState(false);
 
   const handleReset = () => {
     resetForm();
     setSubmitError("");
     setSubmitSuccess("");
+    setConsentChecked(false);
   };
 
   const handleSubmitLead = async () => {
@@ -68,16 +71,18 @@ export default function RegistrationPage() {
           />
 
           <div className="stepper">
-            {steps.map((label, index) => (
-              <div key={label} className={`step ${step >= index + 1 ? "active" : ""}`}>
-                {(() => {
-                  const Icon = stepIcons[index];
-                  return <Icon className="step-icon" />;
-                })()}
-                <span>{index + 1}</span>
-                <p>{label}</p>
-              </div>
-            ))}
+            {steps.map((label, index) => {
+              const Icon = stepIcons[index];
+              return (
+                <div key={label} className={`step ${step >= index + 1 ? "active" : ""}`}>
+                  <div className="step-marker">
+                    <Icon className="step-icon" />
+                    <span>{index + 1}</span>
+                  </div>
+                  <p>{label}</p>
+                </div>
+              );
+            })}
           </div>
 
           <article className="card form-card">
@@ -166,6 +171,16 @@ export default function RegistrationPage() {
                   onChange={(e) => setField("city", e.target.value)}
                 />
               </label>
+              <label className="consent-box">
+                <input
+                  type="checkbox"
+                  checked={consentChecked}
+                  onChange={(e) => setConsentChecked(e.target.checked)}
+                />
+                <span>
+                  Saya menyetujui syarat dan ketentuan serta kebijakan privasi Azizati.id.
+                </span>
+              </label>
             </div>
           ) : null}
 
@@ -213,10 +228,11 @@ export default function RegistrationPage() {
                 disabled={
                   (step === 1 && !form.product) ||
                   (step === 2 && !form.bankId) ||
-                  (step === 3 && !isPersonalDataValid(form))
+                  (step === 3 && (!isPersonalDataValid(form) || !consentChecked))
                 }
               >
                 Lanjut
+                <ChevronRightIcon className="btn-icon" />
               </button>
             ) : (
               <button

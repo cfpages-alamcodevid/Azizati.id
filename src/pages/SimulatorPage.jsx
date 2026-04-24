@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import {
+  ArrowRightIcon,
   BanknotesIcon,
   CalculatorIcon,
   CheckBadgeIcon,
+  LockClosedIcon,
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 import SectionTitle from "../components/ui/SectionTitle";
@@ -47,13 +49,25 @@ export default function SimulatorPage() {
               Kalkulator Tabungan
             </h3>
             <div className="form-stack">
-              <label>
-                Tujuan Ibadah
-                <select value={goalType} onChange={(e) => setGoalType(e.target.value)}>
-                  <option value="haji">Haji</option>
-                  <option value="umroh">Umroh</option>
-                </select>
-              </label>
+              <div>
+                <label>Tujuan Ibadah</label>
+                <div className="segmented-control">
+                  <button
+                    type="button"
+                    className={goalType === "haji" ? "segment active" : "segment"}
+                    onClick={() => setGoalType("haji")}
+                  >
+                    Haji
+                  </button>
+                  <button
+                    type="button"
+                    className={goalType === "umroh" ? "segment active" : "segment"}
+                    onClick={() => setGoalType("umroh")}
+                  >
+                    Umroh
+                  </button>
+                </div>
+              </div>
 
               <label>
                 Estimasi Biaya Saat Ini
@@ -66,16 +80,25 @@ export default function SimulatorPage() {
                 />
               </label>
 
-              <label>
-                Target Waktu Keberangkatan (tahun)
+              <div>
+                <label>Target Waktu Keberangkatan</label>
+                <div className="range-head">
+                  <span>1 Tahun</span>
+                  <strong>{targetYears} Tahun</strong>
+                </div>
                 <input
-                  type="number"
+                  type="range"
                   min={1}
-                  max={15}
+                  max={10}
                   value={targetYears}
                   onChange={(e) => setTargetYears(Number(e.target.value))}
+                  className="range-input"
                 />
-              </label>
+                <div className="range-foot">
+                  <span>1 Tahun</span>
+                  <span>10 Tahun</span>
+                </div>
+              </div>
             </div>
           </article>
 
@@ -95,11 +118,15 @@ export default function SimulatorPage() {
                 <SparklesIcon className="inline-icon" />
                 Mitra Rekomendasi
               </p>
+              <div className="featured-bank-visual">
+                <LockClosedIcon className="featured-bank-lock" />
+              </div>
               <h3>{topBank?.name ?? "Bank Mitra"}</h3>
               <p>{topRecommendation?.reason ?? "Jalankan simulasi untuk melihat rekomendasi."}</p>
               <button type="button" className="btn btn-secondary">
                 <BanknotesIcon className="btn-icon" />
                 Buka Rekening Sekarang
+                <ArrowRightIcon className="btn-icon" />
               </button>
             </article>
           </div>

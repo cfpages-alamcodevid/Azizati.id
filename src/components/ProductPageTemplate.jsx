@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import {
   CheckCircleIcon,
+  ClockIcon,
+  DevicePhoneMobileIcon,
+  LockClosedIcon,
   ShieldCheckIcon,
   SparklesIcon,
+  StarIcon,
   WalletIcon,
 } from "@heroicons/react/24/outline";
 import SectionTitle from "./ui/SectionTitle";
@@ -13,6 +17,8 @@ export default function ProductPageTemplate({
   description,
   features,
   ctaText,
+  consultTitle,
+  consultDescription,
 }) {
   return (
     <section className="section">
@@ -25,15 +31,19 @@ export default function ProductPageTemplate({
                 {ctaText}
               </Link>
               <Link to="/pendaftaran" className="btn btn-secondary">
-                Daftar Sekarang
+                Pelajari Detail
               </Link>
             </div>
           </div>
-          <div className="product-visual-card">
-            <div className="product-pattern" />
+          <div className="product-visual-card product-visual-card-strong">
+            <div className="product-pattern product-pattern-strong" />
             <div className="product-float-badge">
               <SparklesIcon className="inline-icon" />
               Program Terpercaya
+            </div>
+            <div className="product-platform-badge">
+              <LockClosedIcon className="inline-icon" />
+              Mitra Resmi
             </div>
           </div>
         </div>
@@ -45,16 +55,31 @@ export default function ProductPageTemplate({
           </div>
           <div className="grid cards-3">
             {features.map((feature) => (
-              <article className="card" key={feature}>
-                <ShieldCheckIcon className="card-icon" />
-                <p>{feature}</p>
+              <article className="card product-feature-card" key={feature.title}>
+                <feature.icon className="card-icon" />
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
               </article>
             ))}
           </div>
         </div>
 
-        <div className="grid cards-2 section-gap-top">
-          <article className="card">
+        <div className="product-consult-shell section-gap-top">
+          <div className="product-consult-copy">
+            <h3>{consultTitle}</h3>
+            <p>{consultDescription}</p>
+            <div className="product-mini-points">
+              <p>
+                <ClockIcon className="inline-icon" />
+                Layanan konsultasi responsif.
+              </p>
+              <p>
+                <ShieldCheckIcon className="inline-icon" />
+                Pendampingan proses pendaftaran.
+              </p>
+            </div>
+          </div>
+          <article className="card product-consult-card">
             <h3 className="card-title-with-icon">
               <WalletIcon className="card-icon-sm" />
               Apa yang Anda Dapatkan
@@ -73,22 +98,20 @@ export default function ProductPageTemplate({
                 Pendampingan proses pendaftaran oleh tim Azizati.
               </li>
             </ul>
-          </article>
-          <article className="card">
-            <h3>Langkah Berikutnya</h3>
-            <p>
-              Lanjutkan ke simulator untuk menghitung estimasi setoran bulanan, kemudian kirim
-              pendaftaran agar tim Azizati membantu proses pembukaan rekening.
-            </p>
-            <div className="product-mini-points">
+            <div className="product-mini-points product-mini-points-compact">
               <p>
-                <CheckCircleIcon className="inline-icon" />
+                <DevicePhoneMobileIcon className="inline-icon" />
                 Konsultasi awal tanpa biaya.
               </p>
               <p>
-                <CheckCircleIcon className="inline-icon" />
-                Pendampingan pemilihan bank yang paling cocok.
+                <StarIcon className="inline-icon" />
+                Pemilihan bank yang paling cocok.
               </p>
+            </div>
+            <div className="cta-row">
+              <Link to="/pendaftaran" className="btn btn-primary btn-block">
+                Hubungi Saya
+              </Link>
             </div>
           </article>
         </div>
