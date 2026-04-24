@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lengkapi Data Diri - Azizati.id</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#00174b",
+                        "on-surface-variant": "#4d4636",
+                        "gold-gradient": "linear-gradient(135deg, #EEDC82 0%, #CFA93F 50%, #937119 100%)",
+                        "on-surface": "#1f1b14",
+                        "inverse-primary": "#eac255",
+                        "surface-tint": "#755b00",
+                        "primary-container": "#cfa93f",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#594400",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f5ede0",
+                        "surface-primary": "#FFFFFF",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e5e2e1",
+                        "text-heading": "#111111",
+                        "tertiary-fixed": "#dbe1ff",
+                        "tertiary": "#445ba0",
+                        "primary-fixed-dim": "#eac255",
+                        "on-tertiary-container": "#243d81",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#eae1d5",
+                        "border-subtle": "#E5E7EB",
+                        "outline-variant": "#d0c5b0",
+                        "on-secondary-fixed-variant": "#474646",
+                        "primary": "#755b00",
+                        "primary-fixed": "#ffdf92",
+                        "gold-light": "#EEDC82",
+                        "gold-dark": "#937119",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#efe7db",
+                        "inverse-on-surface": "#f8f0e3",
+                        "secondary": "#5f5e5e",
+                        "inverse-surface": "#343028",
+                        "on-background": "#1f1b14",
+                        "surface-variant": "#eae1d5",
+                        "surface-bright": "#fff8f1",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#656464",
+                        "text-body": "#374151",
+                        "surface": "#fff8f1",
+                        "surface-alt": "#F9FAFB",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#e1d9cd",
+                        "surface-container-low": "#fbf2e6",
+                        "outline": "#7f7664",
+                        "on-tertiary-fixed-variant": "#2a4387",
+                        "error": "#ba1a1a",
+                        "background": "#fff8f1",
+                        "tertiary-container": "#94abf6",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary-container": "#523f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "0.5rem",
+                        "stack-lg": "2rem",
+                        "gutter": "1.5rem",
+                        "container-max": "1280px",
+                        "stack-md": "1rem",
+                        "section-gap": "6rem"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "h1": ["Manrope"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Manrope"],
+                        "h2": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "h2": ["36px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .bg-gold-gradient {
+            background-image: linear-gradient(135deg, #EEDC82 0%, #CFA93F 50%, #937119 100%);
+        }
+        .text-gold-gradient {
+            background-image: linear-gradient(135deg, #CFA93F 0%, #937119 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center justify-center py-section-gap px-gutter">
+<!-- Main Container -->
+<main class="w-full max-w-2xl bg-surface-primary rounded-xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] overflow-hidden border-t-4 border-primary-container relative">
+<!-- Decorative Header -->
+<div class="px-8 pt-10 pb-6 text-center border-b border-border-subtle bg-surface-alt">
+<h1 class="font-h2 text-h2 text-text-heading mb-2">Lengkapi Data Diri</h1>
+<p class="font-body-md text-body-md text-text-body">Langkah terakhir untuk memulai perjalanan Anda bersama Azizati.</p>
+</div>
+<!-- Stepper -->
+<div class="px-8 py-6 bg-surface-primary border-b border-border-subtle">
+<div class="flex items-center justify-center w-full max-w-md mx-auto">
+<!-- Step 1 (Completed) -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary-container mt-2">Pilih Layanan</span>
+</div>
+<!-- Connector 1-2 -->
+<div class="flex-1 h-[2px] bg-primary-container -mt-6 mx-2"></div>
+<!-- Step 2 (Completed) -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary-container mt-2">Simulasi</span>
+</div>
+<!-- Connector 2-3 -->
+<div class="flex-1 h-[2px] bg-primary-container -mt-6 mx-2"></div>
+<!-- Step 3 (Active) -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-primary border-2 border-primary-container text-primary-container flex items-center justify-center shadow-sm ring-4 ring-primary-container/20">
+<span class="font-bold text-sm">3</span>
+</div>
+<span class="font-label-caps text-label-caps text-text-heading mt-2">Data Diri</span>
+</div>
+</div>
+</div>
+<!-- Form Section -->
+<div class="p-8">
+<form action="#" class="space-y-stack-lg" method="POST">
+<div class="space-y-stack-md">
+<!-- Nama Lengkap -->
+<div>
+<label class="block font-label-caps text-label-caps text-text-heading mb-2" for="fullName">Nama Lengkap</label>
+<input class="w-full bg-surface-alt border border-border-subtle rounded-lg px-4 py-3 font-body-md text-body-md text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors shadow-sm" id="fullName" name="fullName" placeholder="Masukkan nama sesuai KTP" type="text"/>
+</div>
+<!-- Nomor WhatsApp -->
+<div>
+<label class="block font-label-caps text-label-caps text-text-heading mb-2" for="whatsapp">Nomor WhatsApp</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-body font-body-md text-body-md">+62</span>
+<input class="w-full bg-surface-alt border border-border-subtle rounded-lg pl-12 pr-4 py-3 font-body-md text-body-md text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors shadow-sm" id="whatsapp" name="whatsapp" placeholder="81234567890" type="tel"/>
+</div>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-caps text-label-caps text-text-heading mb-2" for="email">Alamat Email</label>
+<input class="w-full bg-surface-alt border border-border-subtle rounded-lg px-4 py-3 font-body-md text-body-md text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors shadow-sm" id="email" name="email" placeholder="contoh@email.com" type="email"/>
+</div>
+<!-- Kota Domisili -->
+<div>
+<label class="block font-label-caps text-label-caps text-text-heading mb-2" for="city">Kota Domisili</label>
+<div class="relative">
+<select class="w-full bg-surface-alt border border-border-subtle rounded-lg px-4 py-3 font-body-md text-body-md text-text-heading appearance-none focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors shadow-sm" id="city" name="city">
+<option disabled="" selected="" value="">Pilih kota Anda</option>
+<option value="jakarta">Jakarta</option>
+<option value="surabaya">Surabaya</option>
+<option value="bandung">Bandung</option>
+<option value="medan">Medan</option>
+<option value="lainnya">Lainnya</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-text-body pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Terms and Conditions -->
+<div class="flex items-start gap-3 bg-surface-container-low p-4 rounded-lg">
+<div class="flex items-center h-6">
+<input class="w-5 h-5 text-primary-container border-border-subtle rounded focus:ring-primary-container bg-surface-primary cursor-pointer" id="terms" name="terms" type="checkbox"/>
+</div>
+<div class="flex-1">
+<label class="font-body-md text-body-md text-text-body cursor-pointer" for="terms">
+                            Saya menyetujui <a class="text-primary-container font-semibold hover:underline" href="#">Syarat &amp; Ketentuan</a> serta <a class="text-primary-container font-semibold hover:underline" href="#">Kebijakan Privasi</a> yang berlaku di Azizati.id.
+                        </label>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col-reverse sm:flex-row gap-4 pt-4 border-t border-border-subtle">
+<button class="w-full sm:w-auto px-8 py-3 rounded-lg font-label-caps text-label-caps text-text-heading bg-surface-primary border border-border-subtle hover:bg-surface-alt transition-all duration-200 shadow-sm flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                        Kembali
+                    </button>
+<button class="w-full sm:flex-1 px-8 py-3 rounded-lg font-label-caps text-label-caps text-on-primary bg-gold-gradient hover:-translate-y-1 hover:shadow-lg transition-all duration-200 shadow-md flex items-center justify-center gap-2" type="submit">
+                        Kirim Pendaftaran
+                        <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+</body></html>

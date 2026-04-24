@@ -1,0 +1,8 @@
+name = "azizati-id"
+compatibility_date = "2026-04-24"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "AZIZATI_DB"
+database_name = "azizati-db"
+database_id = "PASTE_YOUR_D1_DATABASE_ID_HERE"

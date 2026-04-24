@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Azizati.id - Lead Generation / Registration Form</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-alt": "#F9FAFB",
+                      "text-heading": "#111111",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#243d81",
+                      "surface-dim": "#e1d9cd",
+                      "on-primary-container": "#523f00",
+                      "error": "#ba1a1a",
+                      "primary-container": "#cfa93f",
+                      "surface-container-low": "#fbf2e6",
+                      "on-primary-fixed": "#241a00",
+                      "on-surface-variant": "#4d4636",
+                      "secondary-fixed": "#e5e2e1",
+                      "surface": "#fff8f1",
+                      "secondary": "#5f5e5e",
+                      "on-secondary-container": "#656464",
+                      "on-secondary-fixed-variant": "#474646",
+                      "surface-tint": "#755b00",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#dbe1ff",
+                      "surface-variant": "#eae1d5",
+                      "primary-fixed": "#ffdf92",
+                      "gold-light": "#EEDC82",
+                      "inverse-surface": "#343028",
+                      "gold-gradient": "linear-gradient(135deg, #EEDC82 0%, #CFA93F 50%, #937119 100%)",
+                      "surface-container-highest": "#eae1d5",
+                      "tertiary-container": "#94abf6",
+                      "on-tertiary-fixed-variant": "#2a4387",
+                      "on-tertiary": "#ffffff",
+                      "background": "#fff8f1",
+                      "primary": "#755b00",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "outline": "#7f7664",
+                      "outline-variant": "#d0c5b0",
+                      "on-tertiary-fixed": "#00174b",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#fff8f1",
+                      "inverse-on-surface": "#f8f0e3",
+                      "secondary-container": "#e5e2e1",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#594400",
+                      "text-body": "#374151",
+                      "primary-fixed-dim": "#eac255",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "on-surface": "#1f1b14",
+                      "tertiary-fixed-dim": "#b4c5ff",
+                      "surface-container-high": "#efe7db",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "tertiary": "#445ba0",
+                      "on-background": "#1f1b14",
+                      "gold-dark": "#937119",
+                      "inverse-primary": "#eac255",
+                      "border-subtle": "#E5E7EB",
+                      "surface-container": "#f5ede0",
+                      "surface-primary": "#FFFFFF"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "1.5rem",
+                      "stack-lg": "2rem",
+                      "stack-md": "1rem",
+                      "container-max": "1280px",
+                      "section-gap": "6rem",
+                      "stack-sm": "0.5rem"
+              },
+              "fontFamily": {
+                      "h2": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "h3": [
+                              "Manrope"
+                      ],
+                      "h1": [
+                              "Manrope"
+                      ],
+                      "label-caps": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "h2": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-caps": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+      </style>
+</head>
+<body class="bg-background text-text-body font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Linear/Transactional Intent -> Suppressed nav links, keep brand) -->
+<header class="bg-white/90 dark:bg-slate-950/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
+<a class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white font-h3 text-h3 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-amber-500" data-icon="mosque" data-weight="fill" style="font-variation-settings: 'FILL' 1;">mosque</span>
+                Azizati.id
+            </a>
+<!-- Suppressed Nav for Lead Gen form -->
+<a class="font-label-caps text-label-caps text-slate-600 hover:text-amber-500 transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                Kembali
+            </a>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[100px] pb-section-gap px-gutter max-w-container-max mx-auto w-full flex items-center justify-center">
+<div class="w-full max-w-3xl bg-surface-primary rounded-xl shadow-md border-t-4 border-t-primary-container p-8 md:p-12 relative overflow-hidden">
+<!-- Decorative Background Element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-gold-gradient opacity-[0.03] rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl pointer-events-none"></div>
+<div class="text-center mb-stack-lg relative z-10">
+<h1 class="font-h2 text-h2 text-text-heading mb-stack-sm">Mulai Perjalanan Suci Anda</h1>
+<p class="font-body-lg text-body-lg text-secondary">Lengkapi data diri Anda untuk mendapatkan simulasi dan penawaran terbaik.</p>
+</div>
+<!-- Progress Indicator -->
+<div class="flex items-center justify-center mb-stack-lg relative z-10">
+<div class="flex items-center gap-4 w-full max-w-md">
+<!-- Step 1: Active -->
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-caps text-label-caps shadow-sm">1</div>
+<span class="font-label-caps text-[12px] text-primary-container">Produk</span>
+</div>
+<div class="h-[2px] flex-1 bg-border-subtle mx-2"></div>
+<!-- Step 2: Inactive -->
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-8 h-8 rounded-full bg-surface-alt border border-border-subtle text-secondary flex items-center justify-center font-label-caps text-label-caps">2</div>
+<span class="font-label-caps text-[12px] text-secondary">Bank</span>
+</div>
+<div class="h-[2px] flex-1 bg-border-subtle mx-2"></div>
+<!-- Step 3: Inactive -->
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-8 h-8 rounded-full bg-surface-alt border border-border-subtle text-secondary flex items-center justify-center font-label-caps text-label-caps">3</div>
+<span class="font-label-caps text-[12px] text-secondary">Data</span>
+</div>
+</div>
+</div>
+<!-- Form Container -->
+<form class="space-y-stack-lg relative z-10">
+<!-- Step 1: Product Selection -->
+<div class="space-y-stack-md">
+<h3 class="font-h3 text-h3 text-text-heading border-b border-border-subtle pb-2">1. Pilih Layanan</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Option Haji -->
+<label class="relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="product" type="radio" value="haji"/>
+<div class="h-full bg-surface-alt rounded-lg border-2 border-primary-container p-6 flex flex-col items-center text-center transition-all peer-checked:bg-surface-container-low peer-checked:shadow-sm">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-4" data-icon="kaaba" data-weight="fill" style="font-variation-settings: 'FILL' 1;">mosque</span>
+<span class="font-body-lg text-body-lg text-text-heading font-semibold mb-1">Tabungan Haji</span>
+<span class="font-body-md text-sm text-secondary">Mulai persiapkan ibadah Haji Anda sejak dini.</span>
+<!-- Active Indicator -->
+<div class="absolute top-4 right-4 w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+</div>
+</label>
+<!-- Option Umroh -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="product" type="radio" value="umroh"/>
+<div class="h-full bg-surface-alt rounded-lg border-2 border-transparent p-6 flex flex-col items-center text-center transition-all hover:border-border-subtle peer-checked:border-primary-container peer-checked:bg-surface-container-low peer-checked:shadow-sm">
+<span class="material-symbols-outlined text-4xl text-secondary group-hover:text-primary-container transition-colors mb-4" data-icon="flight_takeoff">flight_takeoff</span>
+<span class="font-body-lg text-body-lg text-text-heading font-semibold mb-1">Tabungan Umroh</span>
+<span class="font-body-md text-sm text-secondary">Rencanakan perjalanan Umroh impian Anda.</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Form Actions (Placeholder for multi-step navigation) -->
+<div class="flex justify-end pt-stack-md border-t border-border-subtle">
+<button class="bg-[linear-gradient(135deg,_#EEDC82_0%,_#CFA93F_50%,_#937119_100%)] text-on-primary font-label-caps text-label-caps px-8 py-4 rounded-lg shadow-sm hover:-translate-y-[2px] hover:shadow-md transition-all duration-300 flex items-center gap-2" type="button">
+                        Selanjutnya
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Note: The other steps (Bank, Personal Data) and Success Message would logically be handled via JS state in a real app, 
+                     but are omitted here as we are building a single static HTML view representing the active first step. -->
+</form>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-12 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-6">
+<div class="text-xl font-black text-slate-900 dark:text-white font-h3 flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-500" data-icon="mosque" data-weight="fill" style="font-variation-settings: 'FILL' 1;">mosque</span>
+                Azizati.id
+            </div>
+<div class="flex gap-6">
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-amber-500 transition-colors" href="#">Tentang Kami</a>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-amber-500 transition-colors" href="#">Kebijakan Privasi</a>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-amber-500 transition-colors" href="#">Syarat &amp; Ketentuan</a>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-amber-500 transition-colors" href="#">Bantuan</a>
+</div>
+<div class="font-manrope text-sm text-slate-500 dark:text-slate-400">
+                © 2024 Azizati.id - Platform Agregator Tabungan Haji &amp; Umroh Terpercaya.
+            </div>
+</div>
+</footer>
+</body></html>

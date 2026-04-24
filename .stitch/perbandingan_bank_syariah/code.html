@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perbandingan Bank - Azizati.id</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-alt": "#F9FAFB",
+                        "text-heading": "#111111",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#243d81",
+                        "surface-dim": "#e1d9cd",
+                        "on-primary-container": "#523f00",
+                        "error": "#ba1a1a",
+                        "primary-container": "#cfa93f",
+                        "surface-container-low": "#fbf2e6",
+                        "on-primary-fixed": "#241a00",
+                        "on-surface-variant": "#4d4636",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface": "#fff8f1",
+                        "secondary": "#5f5e5e",
+                        "on-secondary-container": "#656464",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-tint": "#755b00",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#dbe1ff",
+                        "surface-variant": "#eae1d5",
+                        "primary-fixed": "#ffdf92",
+                        "gold-light": "#EEDC82",
+                        "inverse-surface": "#343028",
+                        "gold-gradient": "linear-gradient(135deg, #EEDC82 0%, #CFA93F 50%, #937119 100%)",
+                        "surface-container-highest": "#eae1d5",
+                        "tertiary-container": "#94abf6",
+                        "on-tertiary-fixed-variant": "#2a4387",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fff8f1",
+                        "primary": "#755b00",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "outline": "#7f7664",
+                        "outline-variant": "#d0c5b0",
+                        "on-tertiary-fixed": "#00174b",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f1",
+                        "inverse-on-surface": "#f8f0e3",
+                        "secondary-container": "#e5e2e1",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#594400",
+                        "text-body": "#374151",
+                        "primary-fixed-dim": "#eac255",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-surface": "#1f1b14",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "surface-container-high": "#efe7db",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#445ba0",
+                        "on-background": "#1f1b14",
+                        "gold-dark": "#937119",
+                        "inverse-primary": "#eac255",
+                        "border-subtle": "#E5E7EB",
+                        "surface-container": "#f5ede0",
+                        "surface-primary": "#FFFFFF"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "stack-lg": "2rem",
+                        "stack-md": "1rem",
+                        "container-max": "1280px",
+                        "section-gap": "6rem",
+                        "stack-sm": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "h2": ["Manrope"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h3": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "label-caps": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["36px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .gold-gradient-bg { background: linear-gradient(135deg, #EEDC82 0%, #CFA93F 50%, #937119 100%); }
+        .soft-shadow { box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-background text-text-body font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm bg-white/90 dark:bg-slate-950/90 backdrop-blur-md">
+<div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">Azizati.id</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-600 dark:text-slate-400 hover:text-amber-500 transition-colors font-manrope text-sm font-medium tracking-wide uppercase" href="#">Beranda</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-amber-500 transition-colors font-manrope text-sm font-medium tracking-wide uppercase" href="#">Simulasi</a>
+<a class="text-amber-600 dark:text-amber-400 border-b-2 border-amber-500 pb-1 font-manrope text-sm font-medium tracking-wide uppercase" href="#">Perbandingan</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-amber-500 transition-colors font-manrope text-sm font-medium tracking-wide uppercase" href="#">Kemitraan</a>
+</div>
+<button class="gold-gradient-bg text-on-primary px-6 py-2.5 rounded-full font-label-caps text-label-caps hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                Mulai Menabung
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-8 max-w-7xl mx-auto w-full">
+<!-- Header Section -->
+<div class="text-center mb-16">
+<h1 class="font-h1 text-h1 text-text-heading mb-4">Perbandingan Bank Syariah</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">Temukan mitra perbankan yang paling sesuai dengan rencana tabungan Haji dan Umroh Anda. Kami menyajikan komparasi transparan untuk ketenangan pikiran Anda.</p>
+</div>
+<!-- Bento Grid Comparison -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Bank 1: BSI -->
+<div class="bg-surface-primary rounded-xl soft-shadow border-t-4 border-primary-container flex flex-col p-6 hover:-translate-y-2 transition-transform duration-300 group">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-lg bg-surface-alt flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="account_balance">account_balance</span>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Premium</span>
+</div>
+<h3 class="font-h3 text-h3 text-text-heading mb-2">BSI</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Bank Syariah Indonesia</p>
+<div class="space-y-4 mb-8 flex-grow">
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Tipe</p>
+<p class="font-body-md text-body-md text-on-surface">Umum &amp; Premium</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Cara Monetisasi</p>
+<p class="font-body-md text-body-md text-on-surface">Bagi Hasil / Nisbah</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Produk Utama</p>
+<p class="font-body-md text-body-md text-on-surface">Tabungan Mabrur</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Topik Dibahas</p>
+<p class="font-body-md text-body-md text-on-surface">Kemudahan Autodebet, Porsi Haji</p>
+</div>
+</div>
+<button class="w-full bg-surface-alt border border-outline-variant text-text-heading hover:bg-surface-container hover:border-primary-container transition-colors py-3 rounded-lg font-label-caps text-label-caps mt-auto">
+                    Pilih Bank Ini
+                </button>
+</div>
+<!-- Bank 2: Bank Muamalat -->
+<div class="bg-surface-primary rounded-xl soft-shadow border-t-4 border-surface-alt flex flex-col p-6 hover:-translate-y-2 transition-transform duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-lg bg-surface-alt flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="museum">museum</span>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-text-heading mb-2">Bank Muamalat</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Pionir Syariah</p>
+<div class="space-y-4 mb-8 flex-grow">
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Tipe</p>
+<p class="font-body-md text-body-md text-on-surface">Umum</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Cara Monetisasi</p>
+<p class="font-body-md text-body-md text-on-surface">Bagi Hasil</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Produk Utama</p>
+<p class="font-body-md text-body-md text-on-surface">Tabungan iB Hijrah Haji</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Topik Dibahas</p>
+<p class="font-body-md text-body-md text-on-surface">Fleksibilitas Setoran, Siskohat</p>
+</div>
+</div>
+<button class="w-full bg-surface-alt border border-outline-variant text-text-heading hover:bg-surface-container hover:border-primary-container transition-colors py-3 rounded-lg font-label-caps text-label-caps mt-auto">
+                    Pilih Bank Ini
+                </button>
+</div>
+<!-- Bank 3: Mandiri Syariah -->
+<div class="bg-surface-primary rounded-xl soft-shadow border-t-4 border-surface-alt flex flex-col p-6 hover:-translate-y-2 transition-transform duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-lg bg-surface-alt flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="domain">domain</span>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-text-heading mb-2">Mandiri Syariah</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Layanan Terpadu</p>
+<div class="space-y-4 mb-8 flex-grow">
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Tipe</p>
+<p class="font-body-md text-body-md text-on-surface">Umum</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Cara Monetisasi</p>
+<p class="font-body-md text-body-md text-on-surface">Bagi Hasil</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Produk Utama</p>
+<p class="font-body-md text-body-md text-on-surface">Tabungan Mabrur</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Topik Dibahas</p>
+<p class="font-body-md text-body-md text-on-surface">Asuransi Jiwa, Fasilitas Talangan</p>
+</div>
+</div>
+<button class="w-full bg-surface-alt border border-outline-variant text-text-heading hover:bg-surface-container hover:border-primary-container transition-colors py-3 rounded-lg font-label-caps text-label-caps mt-auto">
+                    Pilih Bank Ini
+                </button>
+</div>
+<!-- Bank 4: BNI Syariah -->
+<div class="bg-surface-primary rounded-xl soft-shadow border-t-4 border-primary-container flex flex-col p-6 hover:-translate-y-2 transition-transform duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-lg bg-surface-alt flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="business_center">business_center</span>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Premium</span>
+</div>
+<h3 class="font-h3 text-h3 text-text-heading mb-2">BNI Syariah</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Hasanah Banking</p>
+<div class="space-y-4 mb-8 flex-grow">
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Tipe</p>
+<p class="font-body-md text-body-md text-on-surface">Umum &amp; Premium</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Cara Monetisasi</p>
+<p class="font-body-md text-body-md text-on-surface">Wadi'ah / Mudharabah</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Produk Utama</p>
+<p class="font-body-md text-body-md text-on-surface">Baitullah Hasanah</p>
+</div>
+<div>
+<p class="text-xs text-secondary-fixed-dim uppercase tracking-wider mb-1">Topik Dibahas</p>
+<p class="font-body-md text-body-md text-on-surface">Mata Uang USD/IDR, Bebas Biaya</p>
+</div>
+</div>
+<button class="w-full bg-surface-alt border border-outline-variant text-text-heading hover:bg-surface-container hover:border-primary-container transition-colors py-3 rounded-lg font-label-caps text-label-caps mt-auto">
+                    Pilih Bank Ini
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-6">
+<div class="text-xl font-black text-slate-900 dark:text-white">Azizati.id</div>
+<div class="flex gap-6 flex-wrap justify-center">
+<a class="font-manrope text-sm text-slate-500 hover:text-amber-500 transition-colors" href="#">Tentang Kami</a>
+<a class="font-manrope text-sm text-slate-500 hover:text-amber-500 transition-colors" href="#">Kebijakan Privasi</a>
+<a class="font-manrope text-sm text-slate-500 hover:text-amber-500 transition-colors" href="#">Syarat &amp; Ketentuan</a>
+<a class="font-manrope text-sm text-slate-500 hover:text-amber-500 transition-colors" href="#">Bantuan</a>
+</div>
+<div class="font-manrope text-sm text-slate-500 dark:text-slate-400 text-center md:text-right">
+                © 2024 Azizati.id - Platform Agregator Tabungan Haji &amp; Umroh Terpercaya.
+            </div>
+</div>
+</footer>
+</body></html>

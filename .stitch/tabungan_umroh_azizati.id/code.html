@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tabungan Umroh - Azizati.id</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f8f0e3",
+                        "on-secondary-container": "#656464",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "surface-container-low": "#fbf2e6",
+                        "on-tertiary-container": "#243d81",
+                        "on-primary-fixed": "#241a00",
+                        "secondary-fixed": "#e5e2e1",
+                        "secondary": "#5f5e5e",
+                        "on-tertiary-fixed-variant": "#2a4387",
+                        "surface-primary": "#FFFFFF",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#e1d9cd",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#dbe1ff",
+                        "outline-variant": "#d0c5b0",
+                        "surface-bright": "#fff8f1",
+                        "on-primary": "#ffffff",
+                        "gold-light": "#EEDC82",
+                        "surface-container": "#f5ede0",
+                        "surface": "#fff8f1",
+                        "on-primary-container": "#523f00",
+                        "on-surface-variant": "#4d4636",
+                        "on-error": "#ffffff",
+                        "gold-gradient": "linear-gradient(135deg, #EEDC82 0%, #CFA93F 50%, #937119 100%)",
+                        "surface-alt": "#F9FAFB",
+                        "surface-container-high": "#efe7db",
+                        "secondary-container": "#e5e2e1",
+                        "inverse-primary": "#eac255",
+                        "primary-fixed": "#ffdf92",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#eae1d5",
+                        "primary-fixed-dim": "#eac255",
+                        "on-primary-fixed-variant": "#594400",
+                        "tertiary": "#445ba0",
+                        "outline": "#7f7664",
+                        "inverse-surface": "#343028",
+                        "on-error-container": "#93000a",
+                        "text-heading": "#111111",
+                        "text-body": "#374151",
+                        "on-secondary-fixed-variant": "#474646",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-surface": "#1f1b14",
+                        "on-background": "#1f1b14",
+                        "background": "#fff8f1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#00174b",
+                        "surface-variant": "#eae1d5",
+                        "primary-container": "#cfa93f",
+                        "surface-tint": "#755b00",
+                        "primary": "#755b00",
+                        "gold-dark": "#937119",
+                        "tertiary-container": "#94abf6",
+                        "border-subtle": "#E5E7EB"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "6rem",
+                        "gutter": "1.5rem",
+                        "stack-md": "1rem",
+                        "stack-lg": "2rem",
+                        "stack-sm": "0.5rem",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Manrope"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "h3": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["36px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-[80px]">
+<!-- TopNavBar -->
+<nav class="bg-white/95 dark:bg-gray-950/95 backdrop-blur-md fixed top-0 w-full z-50 h-[80px] border-b border-gray-100 dark:border-gray-800 shadow-sm font-manrope antialiased tracking-tight">
+<div class="max-w-[1280px] mx-auto px-8 flex items-center justify-between w-full h-full">
+<div class="flex items-center gap-2">
+<img alt="Azizati.id Logo" class="h-8 w-auto rounded" data-alt="minimalist gold and white Islamic geometric logo design for a premium financial service" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDurkEI4dyUoeQm04xN27eYS_JtFQHOTVoAsaFM1OJnjIlfu5fdWIipsseAlBzVLdJedS_qeEKQkMrQAvyT615GU6MzXnjILA3HZgShkj-SEC2FbJMvwGoTT3fB3tFbaw3rTUKpt-nz_rFleTDFxSPhPdVU4v9HCsFneTBjBUTcbjZ9Spbvv1wfEJlzWMLrf4oSsyP6CXQ-EJG1dUnWCGYOoJWDGN9UQlH88LjlTbYytsedVjD1y0UXyu_3naZ5yMwJH3n4WOFAmX4"/>
+<span class="text-2xl font-extrabold tracking-tighter text-gray-900 dark:text-white">Azizati.id</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-gray-600 dark:text-gray-400 font-medium hover:text-amber-600 dark:hover:text-amber-400 transition-all duration-300" href="#">Beranda</a>
+<a class="text-amber-600 dark:text-amber-500 border-b-2 border-amber-600 pb-1 font-bold active:scale-95 transition-transform hover:text-amber-600 dark:hover:text-amber-400 transition-all duration-300" href="#">Simulasi</a>
+<a class="text-gray-600 dark:text-gray-400 font-medium hover:text-amber-600 dark:hover:text-amber-400 transition-all duration-300" href="#">Perbandingan</a>
+<a class="text-gray-600 dark:text-gray-400 font-medium hover:text-amber-600 dark:hover:text-amber-400 transition-all duration-300" href="#">Kemitraan</a>
+</div>
+<button class="bg-[linear-gradient(135deg,_#EEDC82_0%,_#CFA93F_50%,_#937119_100%)] text-white px-6 py-2.5 rounded-lg font-label-caps text-label-caps shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 hidden md:block">
+                Simulasi
+            </button>
+<button class="md:hidden text-gray-600">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative py-section-gap overflow-hidden bg-surface-primary">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-stack-lg z-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant">
+<span class="material-symbols-outlined filled text-primary text-sm">verified</span>
+<span class="font-label-caps text-label-caps text-primary">PROGRAM TERPERCAYA</span>
+</div>
+<h1 class="font-h1 text-h1 text-text-heading">Wujudkan Panggilan Suci dengan <span class="text-transparent bg-clip-text bg-[linear-gradient(135deg,_#CFA93F_0%,_#937119_100%)]">Lebih Ringan</span></h1>
+<p class="font-body-lg text-body-lg text-text-body max-w-xl">
+                        Tabungan Umroh Azizati.id menawarkan fleksibilitas menabung dengan jangka waktu yang dapat disesuaikan. Raih impian ke Tanah Suci dengan tenang, terencana, dan sesuai syariah.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-[linear-gradient(135deg,_#EEDC82_0%,_#CFA93F_50%,_#937119_100%)] text-white px-8 py-4 rounded-lg font-label-caps text-label-caps shadow-[0_8px_30px_rgb(147,113,25,0.2)] hover:shadow-[0_8px_30px_rgb(147,113,25,0.4)] transition-all hover:-translate-y-1">
+                            Mulai Simulasi
+                        </button>
+<button class="bg-transparent border border-outline px-8 py-4 rounded-lg font-label-caps text-label-caps text-text-heading hover:bg-surface-container-low transition-colors">
+                            Pelajari Detail
+                        </button>
+</div>
+</div>
+<div class="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+<img alt="Kaaba" class="w-full h-full object-cover" data-alt="majestic view of the Kaaba in Mecca during golden hour with warm sunlight creating a serene and spiritual atmosphere, high quality photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd3DTvAy0dbZepl88KEnKup0CiSBp4Tid7SN-WvGBDFhASgoAooEYn2_j-0e_KfpadxudNN9KwuIJPghBIu2pHPvSAcbuc1NpkJuQOqNKDZYfgJQvNkMzsdMrMN72c362AcONQDGr88xTvtO69ntEHq4a8AdSregZiJ9UbRaya_TY_62Fxc5lU9UH4mQcU2_8RdMqoWeaQmueBLoFlQeK1mRaLeJRX3tlqLWXM8PAtRusRLatw_D5GWjMy1jxFRmCaf92NrKNrVYU"/>
+<div class="absolute bottom-6 left-6 right-6 z-20 bg-white/90 backdrop-blur p-4 rounded-xl border-t-4 border-primary shadow-lg flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-text-body mb-1">Mitra Resmi</p>
+<p class="font-h3 text-[18px] text-text-heading font-bold">Bank Syariah Indonesia &amp; Muamalat</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Background Blob -->
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-fixed/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-section-gap bg-surface-alt">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-h2 text-h2 text-text-heading">Keunggulan Layanan Kami</h2>
+<p class="font-body-lg text-body-lg text-text-body max-w-2xl mx-auto">Kami merancang pengalaman menabung yang aman, terjamin, dan membawa ketenangan hati.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature 1 -->
+<div class="bg-surface-primary p-8 rounded-2xl shadow-md border-t-4 border-primary hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined filled text-[32px]">payments</span>
+</div>
+<h3 class="font-h3 text-[20px] text-text-heading mb-3">Paket Cicilan Fleksibel</h3>
+<p class="font-body-md text-body-md text-text-body">
+                            Pilih tenor tabungan yang sesuai dengan kemampuan Anda. Mulai dari 12 hingga 36 bulan dengan setoran ringan dan tanpa biaya penalti.
+                        </p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-primary p-8 rounded-2xl shadow-md border-t-4 border-primary hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined filled text-[32px]">flight_takeoff</span>
+</div>
+<h3 class="font-h3 text-[20px] text-text-heading mb-3">Bundling Travel Terpercaya</h3>
+<p class="font-body-md text-body-md text-text-body">
+                            Bekerja sama dengan agen travel umroh pilihan yang telah terverifikasi dan memiliki rekam jejak keberangkatan 100% aman.
+                        </p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-primary p-8 rounded-2xl shadow-md border-t-4 border-primary hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined filled text-[32px]">health_and_safety</span>
+</div>
+<h3 class="font-h3 text-[20px] text-text-heading mb-3">Asuransi Perjalanan</h3>
+<p class="font-body-md text-body-md text-text-body">
+                            Ketenangan ekstra selama perjalanan dengan perlindungan asuransi syariah komprehensif untuk kesehatan dan kecelakaan.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Form Section -->
+<section class="py-section-gap bg-surface-primary">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col lg:flex-row shadow-xl">
+<div class="lg:w-5/12 p-12 bg-[linear-gradient(135deg,_#CFA93F_0%,_#937119_100%)] text-white flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="islamic-pattern" patternunits="userSpaceOnUse" width="40" x="0" y="0">
+<path d="M20 0 L40 20 L20 40 L0 20 Z" fill="none" stroke="currentColor" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#islamic-pattern)" height="100%" width="100%" x="0" y="0"></rect>
+</svg>
+</div>
+<div class="z-10">
+<h2 class="font-h2 text-[32px] text-white mb-4">Rencanakan Umroh Anda Sekarang</h2>
+<p class="font-body-md text-white/90 mb-8">
+                                Tim ahli kami siap membantu Anda menyusun rencana tabungan terbaik. Konsultasi gratis tanpa komitmen.
+                            </p>
+</div>
+<div class="space-y-4 z-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white">support_agent</span>
+<span class="font-body-md text-white">Layanan Konsultasi 24/7</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white">verified_user</span>
+<span class="font-body-md text-white">Data Anda dijamin aman</span>
+</div>
+</div>
+</div>
+<div class="lg:w-7/12 p-12 bg-white">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-caps text-label-caps text-text-heading mb-2">Nama Lengkap</label>
+<input class="w-full bg-surface-alt border border-border-subtle rounded-lg px-4 py-3 font-body-md text-text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" placeholder="Masukkan nama Anda" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-text-heading mb-2">Nomor Telepon</label>
+<input class="w-full bg-surface-alt border border-border-subtle rounded-lg px-4 py-3 font-body-md text-text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" placeholder="08xx xxxx xxxx" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-text-heading mb-2">Target Keberangkatan</label>
+<select class="w-full bg-surface-alt border border-border-subtle rounded-lg px-4 py-3 font-body-md text-text-heading focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none">
+<option>Pilih target tahun</option>
+<option>2024</option>
+<option>2025</option>
+<option>2026</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-text-heading mb-2">Pilih Bank Mitra Pilihan</label>
+<div class="grid grid-cols-2 gap-4">
+<label class="flex items-center gap-3 p-4 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-colors">
+<input class="text-primary focus:ring-primary" name="bank" type="radio"/>
+<span class="font-body-md text-text-heading font-semibold">Bank Syariah Indonesia</span>
+</label>
+<label class="flex items-center gap-3 p-4 border border-border-subtle rounded-lg cursor-pointer hover:bg-surface-container-low transition-colors">
+<input class="text-primary focus:ring-primary" name="bank" type="radio"/>
+<span class="font-body-md text-text-heading font-semibold">Bank Muamalat</span>
+</label>
+</div>
+</div>
+<button class="w-full bg-[linear-gradient(135deg,_#EEDC82_0%,_#CFA93F_50%,_#937119_100%)] text-white px-8 py-4 rounded-lg font-label-caps text-label-caps shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 mt-8" type="submit">
+                                Hubungi Saya
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-gray-950 dark:bg-black w-full py-16 border-t border-gray-900 font-manrope text-sm">
+<div class="max-w-[1280px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="text-xl font-bold text-white">Azizati.id</span>
+<p class="text-gray-500 hover:text-gray-300">© 2024 Azizati.id. Managed by Premium Sharia Finance.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-gray-500 hover:text-gray-300 hover:text-amber-400 transition-colors opacity-90 hover:opacity-100" href="#">Kebijakan Privasi</a>
+<a class="text-gray-500 hover:text-gray-300 hover:text-amber-400 transition-colors opacity-90 hover:opacity-100" href="#">Syarat &amp; Ketentuan</a>
+<a class="text-gray-500 hover:text-gray-300 hover:text-amber-400 transition-colors opacity-90 hover:opacity-100" href="#">Bantuan</a>
+<a class="text-gray-500 hover:text-gray-300 hover:text-amber-400 transition-colors opacity-90 hover:opacity-100" href="#">Tentang Kami</a>
+</div>
+</div>
+</footer>
+</body></html>
