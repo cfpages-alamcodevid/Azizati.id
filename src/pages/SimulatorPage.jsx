@@ -171,27 +171,27 @@ export default function SimulatorPage() {
                   <label className="block text-sm font-medium text-text-body mb-2">
                     Pilih Paket Travel
                   </label>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     {packages.map((pkg) => (
                       <button
                         key={pkg.id}
                         type="button"
                         onClick={() => setPackageId(pkg.id)}
-                        className={`p-3 rounded-lg border text-left transition-all ${
+                        className={`p-4 rounded-lg border text-left transition-all ${
                           packageId === pkg.id
                             ? "bg-amber-50 border-amber-600 ring-2 ring-amber-500/30"
                             : "bg-white border-[#e8dcc6] hover:border-amber-400"
                         }`}
                       >
-                        <div className="flex items-center justify-between mb-1">
+                        <div className="flex items-center gap-2 mb-2">
                           <span className={`text-xs font-bold uppercase tracking-wider ${tierColors[pkg.tier]}`}>
                             {tierLabels[pkg.tier]}
                           </span>
-                          <span className="text-xs font-bold text-text-heading">
-                            {formatRupiah(pkg.price)}
-                          </span>
                         </div>
-                        <p className="text-sm font-bold text-text-heading line-clamp-2">
+                        <p className="text-lg font-bold text-text-heading">
+                          {formatRupiah(pkg.price)}
+                        </p>
+                        <p className="text-xs text-text-body mt-1">
                           {pkg.name}
                         </p>
                       </button>
