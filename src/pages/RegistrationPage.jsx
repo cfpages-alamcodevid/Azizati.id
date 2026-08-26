@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SectionTitle from "../components/ui/SectionTitle";
+import BankLogo from "../components/ui/BankLogo";
 import { banks } from "../data/banks";
 import { useRegistrationStore } from "../store/registrationStore";
 import {
@@ -144,7 +145,7 @@ export default function RegistrationPage() {
                       onChange={() => setField("bankId", bank.id)}
                       className="accent-amber-600"
                     />
-                    <span>{bank.name}</span>
+                    <BankLogo bank={bank} compact />
                   </label>
                 ))}
               </div>

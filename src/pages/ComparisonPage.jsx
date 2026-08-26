@@ -3,6 +3,7 @@ import {
   CheckBadgeIcon,
 } from "@heroicons/react/24/outline";
 import SectionTitle from "../components/ui/SectionTitle";
+import BankLogo from "../components/ui/BankLogo";
 import { banks } from "../data/banks";
 
 const formatRupiah = (value) =>
@@ -35,9 +36,8 @@ export default function ComparisonPage() {
                   Premium
                 </span>
               </div>
-              <h3 className="text-base font-bold text-text-heading">
-                {bank.name}
-              </h3>
+              <h3 className="sr-only">{bank.name}</h3>
+              <BankLogo bank={bank} />
               <p className="text-sm text-[#7a7263]">{bank.suitableFor}</p>
 
               <div className="grid gap-1">
@@ -100,7 +100,7 @@ export default function ComparisonPage() {
               {banks.map((bank) => (
                 <tr key={bank.id}>
                   <td className="p-4 border-b border-[#eee4d1] align-top">
-                    {bank.shortName}
+                    <BankLogo bank={bank} compact />
                   </td>
                   <td className="p-4 border-b border-[#eee4d1] align-top">
                     {bank.product}

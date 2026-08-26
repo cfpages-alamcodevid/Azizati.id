@@ -93,6 +93,47 @@ button:disabled {
   outline-offset: 2px;
 }
 
+.bank-logo-frame {
+  display: inline-flex;
+  width: 10rem;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bank-logo-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 8.25rem;
+  max-height: 2.5rem;
+  object-fit: contain;
+}
+
+.bank-logo-frame--compact {
+  width: 7.5rem;
+  height: 2.75rem;
+}
+
+.bank-logo-frame--compact .bank-logo-image {
+  max-width: 6.75rem;
+  max-height: 2rem;
+}
+
+/* The archived BNI Syariah PNG includes generous white canvas around the mark. */
+.bank-logo-image[data-bank="bni-syariah"] {
+  width: auto;
+  height: 7rem;
+  max-width: none;
+  max-height: none;
+}
+
+.bank-logo-frame--compact .bank-logo-image[data-bank="bni-syariah"] {
+  height: 5.5rem;
+}
+
 @media (max-width: 639px) {
   .container {
     padding-inline: 1rem;

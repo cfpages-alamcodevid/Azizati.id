@@ -9,6 +9,7 @@ import {
   ShieldCheckIcon,
   UserPlusIcon,
 } from "@heroicons/react/24/outline";
+import BankLogo from "../components/ui/BankLogo";
 import { banks } from "../data/banks";
 
 const steps = [
@@ -135,16 +136,19 @@ export default function HomePage() {
       <section className="py-10 bg-[#edf0f4] border-y border-[#e0e5ea]">
         <div className="container">
           <div className="text-center">
-            <p className="text-xs font-extrabold uppercase tracking-widest text-[#7c827f] mb-2">
-              Dipercaya oleh Bank Syariah Terkemuka
+            <p className="text-xs font-extrabold uppercase tracking-widest text-[#7c827f] mb-4">
+              Pilihan Bank dalam Perbandingan
             </p>
-            <div className="flex flex-wrap justify-center gap-6 opacity-75">
+            <div className="grid grid-cols-2 place-items-center gap-3 sm:grid-cols-4">
               {banks.map((bank) => (
-                <span key={bank.id} className="text-sm font-bold text-[#747c88]">
-                  {bank.shortName}
-                </span>
+                <BankLogo key={bank.id} bank={bank} />
               ))}
             </div>
+            <p className="mx-auto mt-4 max-w-[760px] text-xs leading-relaxed text-[#747c88]">
+              Logo adalah merek milik masing-masing bank dan digunakan hanya
+              untuk identifikasi dalam perbandingan. Ketersediaan serta
+              ketentuan produk mengikuti informasi resmi bank.
+            </p>
           </div>
         </div>
       </section>
@@ -255,9 +259,7 @@ export default function HomePage() {
                   className="bg-white border-t-3 border-[#cfa93f] border rounded-xl p-4 flex flex-col gap-3 shadow-soft"
                 >
                   <div>
-                    <h3 className="text-base font-bold text-text-heading">
-                      {bank?.shortName}
-                    </h3>
+                    {bank ? <BankLogo bank={bank} compact /> : null}
                     <p className="text-sm font-bold text-text-heading pb-2 border-b border-[#ebe1d0] mt-1">
                       {item.title}
                     </p>

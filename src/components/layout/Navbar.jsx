@@ -35,22 +35,17 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-[#e7dcc8]">
-      <div className="container flex items-center justify-between min-h-16 md:min-h-20 gap-3">
+      <div className="container flex items-center justify-between min-h-20 md:min-h-24 gap-3">
         <NavLink
           to="/"
-          className="inline-flex items-center gap-2 min-w-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600"
+          className="inline-flex min-w-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600"
           aria-label="Azizati.id - Beranda"
         >
-          <span className="h-11 w-10 overflow-hidden flex-shrink-0" aria-hidden="true">
-            <img
-              src="/images/azizati-logo.png"
-              alt=""
-              className="h-11 w-auto max-w-none"
-            />
-          </span>
-          <span className="font-heading text-xl font-extrabold tracking-tight text-[#17130f]">
-            Azizati<span className="text-[#9a741b]">.id</span>
-          </span>
+          <img
+            src="/images/azizati-logo.png"
+            alt="Azizati.id"
+            className="block h-auto w-[135px] sm:w-[160px]"
+          />
         </NavLink>
 
         <nav

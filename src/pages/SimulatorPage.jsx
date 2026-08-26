@@ -10,6 +10,7 @@ import {
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 import SectionTitle from "../components/ui/SectionTitle";
+import BankLogo from "../components/ui/BankLogo";
 import { banks, travelPackages, tierLabels, tierColors } from "../data/banks";
 import { useSimulatorStore } from "../store/simulatorStore";
 
@@ -299,9 +300,13 @@ export default function SimulatorPage() {
                     <LockClosedIcon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-text-heading">
-                      {topBank?.name ?? "Bank Mitra"}
-                    </h3>
+                    {topBank ? (
+                      <BankLogo bank={topBank} compact />
+                    ) : (
+                      <h3 className="text-lg font-bold text-text-heading">
+                        Bank Mitra
+                      </h3>
+                    )}
                     <p className="text-sm text-amber-700 font-medium">
                       Rekomendasi Utama
                     </p>

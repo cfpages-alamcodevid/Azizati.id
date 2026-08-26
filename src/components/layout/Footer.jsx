@@ -26,18 +26,11 @@ export default function Footer() {
     <footer className="mt-6 border-t border-[#ddd0b4] bg-gradient-to-b from-[#fbf7ef] to-[#f1e7d5] text-[#2b2418]">
       <div className="container py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="md:col-span-1">
-          <div className="mb-4 inline-flex items-center gap-2">
-            <span className="h-11 w-10 overflow-hidden flex-shrink-0" aria-hidden="true">
-              <img
-                src="/images/azizati-logo.png"
-                alt=""
-                className="h-11 w-auto max-w-none"
-              />
-            </span>
-            <span className="font-heading text-xl font-extrabold text-[#17130f]">
-              Azizati<span className="text-[#9a741b]">.id</span>
-            </span>
-          </div>
+          <img
+            src="/images/azizati-logo.png"
+            alt="Azizati.id"
+            className="mb-4 block h-auto w-[180px]"
+          />
           <p className="text-base font-bold text-text-heading mb-2">Tentang Kami</p>
           <p className="text-sm text-[#665f53] leading-relaxed">
             Azizati.id adalah platform perencanaan tabungan Haji dan Umroh
