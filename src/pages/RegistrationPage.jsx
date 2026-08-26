@@ -11,7 +11,7 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/24/outline";
 
-const steps = ["Pilih Produk", "Pilih Bank", "Data Diri", "Review"];
+const steps = ["Tujuan", "Pilih Produk Bank", "Data Diri", "Review"];
 const stepIcons = [Squares2X2Icon, BuildingLibraryIcon, IdentificationIcon, CheckCircleIcon];
 
 const isPersonalDataValid = (form) =>
@@ -26,6 +26,17 @@ export default function RegistrationPage() {
   const [submitError, setSubmitError] = useState("");
   const [submitSuccess, setSubmitSuccess] = useState("");
   const [consentChecked, setConsentChecked] = useState(false);
+  const availableBankProducts = banks.filter((bank) =>
+    bank.goals.includes(form.product),
+  );
+
+  const handleProductSelection = (product) => {
+    setField("product", product);
+    const selectedBank = banks.find((bank) => bank.id === form.bankId);
+    if (selectedBank && !selectedBank.goals.includes(product)) {
+      setField("bankId", "");
+    }
+  };
 
   const handleReset = () => {
     resetForm();
@@ -69,7 +80,7 @@ export default function RegistrationPage() {
             <SectionTitle
               eyebrow="Pendaftaran"
               title="Mulai Perjalanan Suci Anda"
-              description="Lengkapi data diri Anda untuk mendapatkan simulasi dan penawaran terbaik."
+              description="Pilih tujuan dan produk tabungan, lalu lengkapi data agar tim Azizati dapat menindaklanjuti kebutuhan Anda."
             />
           </div>
 
@@ -102,14 +113,14 @@ export default function RegistrationPage() {
               <div className="grid gap-4">
                 <h3 className="text-base font-bold text-text-heading inline-flex items-center gap-1">
                   <Squares2X2Icon className="w-4 h-4 text-amber-800" />
-                  Pilih Produk
+                  Pilih Tujuan Ibadah
                 </h3>
                 <label className="flex items-center gap-2 border border-[#e8dcc3] rounded-lg p-3 bg-white cursor-pointer hover:bg-[#fbf9f5] transition-all">
                   <input
                     type="radio"
                     name="product"
                     checked={form.product === "haji"}
-                    onChange={() => setField("product", "haji")}
+                    onChange={() => handleProductSelection("haji")}
                     className="accent-amber-600"
                   />
                   <span>Tabungan Haji</span>
@@ -119,7 +130,7 @@ export default function RegistrationPage() {
                     type="radio"
                     name="product"
                     checked={form.product === "umroh"}
-                    onChange={() => setField("product", "umroh")}
+                    onChange={() => handleProductSelection("umroh")}
                     className="accent-amber-600"
                   />
                   <span>Tabungan Umroh</span>
@@ -131,12 +142,12 @@ export default function RegistrationPage() {
               <div className="grid gap-4">
                 <h3 className="text-base font-bold text-text-heading inline-flex items-center gap-1">
                   <BuildingLibraryIcon className="w-4 h-4 text-amber-800" />
-                  Pilih Bank Mitra
+                  Pilih Produk Tabungan
                 </h3>
-                {banks.map((bank) => (
+                {availableBankProducts.map((bank) => (
                   <label
                     key={bank.id}
-                    className="flex items-center gap-2 border border-[#e8dcc3] rounded-lg p-3 bg-white cursor-pointer hover:bg-[#fbf9f5] transition-all"
+                    className="grid grid-cols-[auto_auto_1fr] items-center gap-3 border border-[#e8dcc3] rounded-lg p-3 bg-white cursor-pointer hover:bg-[#fbf9f5] transition-all"
                   >
                     <input
                       type="radio"
@@ -146,6 +157,14 @@ export default function RegistrationPage() {
                       className="accent-amber-600"
                     />
                     <BankLogo bank={bank} compact />
+                    <span>
+                      <strong className="block text-sm text-text-heading">
+                        {bank.product}
+                      </strong>
+                      <span className="block text-xs text-text-body">
+                        {bank.segment}
+                      </span>
+                    </span>
                   </label>
                 ))}
               </div>
@@ -224,6 +243,12 @@ export default function RegistrationPage() {
                 </h3>
                 <p className="text-sm">
                   Produk: <strong className="text-text-heading">{form.product || "-"}</strong>
+                </p>
+                <p className="text-sm">
+                  Produk bank:{" "}
+                  <strong className="text-text-heading">
+                    {banks.find((b) => b.id === form.bankId)?.product || "-"}
+                  </strong>
                 </p>
                 <p className="text-sm">
                   Bank:{" "}

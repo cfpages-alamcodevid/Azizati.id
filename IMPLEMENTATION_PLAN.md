@@ -4,7 +4,7 @@
 
 1. Beranda (`/`)
 2. Simulator Tabungan (`/simulator`)
-3. Perbandingan Bank (`/perbandingan-bank`)
+3. Perbandingan Produk Bank (`/perbandingan-bank`)
 4. Pendaftaran Multi-step (`/pendaftaran`)
 5. Edukasi (Syarat + FAQ) (`/edukasi`)
 6. Landing Tabungan Haji (`/tabungan-haji`)

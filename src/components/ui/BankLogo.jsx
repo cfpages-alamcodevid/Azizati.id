@@ -9,7 +9,7 @@ export default function BankLogo({ bank, compact = false }) {
         src={bank.logo}
         alt={`Logo ${bank.name}`}
         className="bank-logo-image"
-        data-bank={bank.id}
+        data-bank={bank.brandId ?? bank.id}
         loading="lazy"
         decoding="async"
       />

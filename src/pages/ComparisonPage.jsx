@@ -2,6 +2,7 @@ import {
   BuildingLibraryIcon,
   CheckBadgeIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 import SectionTitle from "../components/ui/SectionTitle";
 import BankLogo from "../components/ui/BankLogo";
 import { banks } from "../data/banks";
@@ -19,8 +20,8 @@ export default function ComparisonPage() {
         <div className="max-w-[72ch] mx-auto text-center mb-8">
           <SectionTitle
             eyebrow="Perbandingan"
-            title="Perbandingan Bank Syariah"
-            description="Temukan mitra perbankan yang paling sesuai dengan rencana tabungan Haji dan Umroh Anda."
+            title="Perbandingan Produk Tabungan Syariah"
+            description="Temukan produk yang sesuai dengan tujuan, usia, dan kebutuhan perencanaan Haji atau Umroh Anda."
           />
         </div>
 
@@ -33,18 +34,25 @@ export default function ComparisonPage() {
               <div className="flex justify-between items-center">
                 <BuildingLibraryIcon className="w-4 h-4 text-amber-800" />
                 <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full bg-[#f7e5ba] text-[#6f520a]">
-                  Premium
+                  {bank.goals.map((goal) => goal === "haji" ? "Haji" : "Umroh").join(" / ")}
                 </span>
               </div>
               <h3 className="sr-only">{bank.name}</h3>
               <BankLogo bank={bank} />
+              <p className="font-bold text-text-heading">{bank.product}</p>
               <p className="text-sm text-[#7a7263]">{bank.suitableFor}</p>
 
               <div className="grid gap-1">
                 <p className="text-xs font-bold uppercase tracking-wider text-[#8f8778]">
-                  Tipe
+                  Untuk
                 </p>
-                <p className="text-sm">Umum</p>
+                <p className="text-sm">{bank.segment}</p>
+              </div>
+              <div className="grid gap-1">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#8f8778]">
+                  Akad
+                </p>
+                <p className="text-sm">{bank.akad}</p>
               </div>
               <div className="grid gap-1">
                 <p className="text-xs font-bold uppercase tracking-wider text-[#8f8778]">
@@ -69,13 +77,21 @@ export default function ComparisonPage() {
                   </p>
                 ))}
               </div>
+              <a
+                href={bank.officialUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-center text-sm font-bold text-amber-800 hover:underline"
+              >
+                Cek informasi resmi bank
+              </a>
 
-              <button
-                type="button"
+              <Link
+                to="/pendaftaran"
                 className="w-full inline-flex items-center justify-center gap-1 px-3 py-2.5 rounded-lg font-bold border border-[#d7c29a] text-[#2a2213] hover:bg-[#fbf1db] transition-all"
               >
-                Pilih Bank Ini
-              </button>
+                Pilih Produk Ini
+              </Link>
             </article>
           ))}
         </div>
@@ -91,6 +107,7 @@ export default function ComparisonPage() {
               <tr>
                 <th className="text-left p-4 border-b border-[#eee4d1]">Bank</th>
                 <th className="text-left p-4 border-b border-[#eee4d1]">Produk</th>
+                <th className="text-left p-4 border-b border-[#eee4d1]">Untuk</th>
                 <th className="text-left p-4 border-b border-[#eee4d1]">Setoran Awal</th>
                 <th className="text-left p-4 border-b border-[#eee4d1]">Biaya Admin</th>
                 <th className="text-left p-4 border-b border-[#eee4d1]">Keunggulan</th>
@@ -104,6 +121,9 @@ export default function ComparisonPage() {
                   </td>
                   <td className="p-4 border-b border-[#eee4d1] align-top">
                     {bank.product}
+                  </td>
+                  <td className="p-4 border-b border-[#eee4d1] align-top">
+                    {bank.segment}
                   </td>
                   <td className="p-4 border-b border-[#eee4d1] align-top">
                     {formatRupiah(bank.minSetoran)}

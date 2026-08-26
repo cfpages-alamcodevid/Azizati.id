@@ -16,7 +16,7 @@ const productLinks = [
 ];
 
 const staticLinks = [
-  { to: "/perbandingan-bank", label: "Perbandingan Bank", icon: RectangleGroupIcon },
+  { to: "/perbandingan-bank", label: "Perbandingan Produk", icon: RectangleGroupIcon },
   { to: "/edukasi", label: "Edukasi & FAQ", icon: BookOpenIcon },
   { to: "/pendaftaran", label: "Pendaftaran", icon: BookOpenIcon },
 ];
@@ -34,8 +34,8 @@ export default function Footer() {
           <p className="text-base font-bold text-text-heading mb-2">Tentang Kami</p>
           <p className="text-sm text-[#665f53] leading-relaxed">
             Azizati.id adalah platform perencanaan tabungan Haji dan Umroh
-            yang membantu Anda memilih produk syariah dengan lebih tenang,
-            jelas, dan terarah.
+            yang membantu Anda memahami dan memilih produk syariah dengan
+            lebih tenang, jelas, dan terarah.
           </p>
           <div className="flex gap-2 mt-3">
             <a

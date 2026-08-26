@@ -14,7 +14,7 @@
 Gap:
 1. Hero saat ini masih split kiri-kanan, padahal referensi final memakai hero text-centric yang terpusat dengan glow emas besar di belakang.
 2. Partner strip belum divisualisasikan sebagai trust logo rail.
-3. Struktur homepage final harus mengikuti referensi: Hero centered -> Partner strip -> 3 langkah -> simulator highlight two-column -> bank cards -> benefits.
+3. Struktur homepage final harus mengikuti referensi: Hero centered -> bank strip -> 3 langkah -> simulator highlight two-column -> product cards -> benefits.
 4. Section "Mengapa Memilih Azizati.id?" belum ada di homepage saat ini.
 
 Aksi:
@@ -23,7 +23,7 @@ Aksi:
 3. Tambah trust strip dengan bank rails yang ringan.
 4. Tambah langkah 3 tahap dengan milestone line.
 5. Tambah section simulator highlight mengikuti struktur referensi.
-6. Tambah bank cards homepage dengan CTA.
+6. Tambah product cards homepage dengan CTA.
 7. Tambah section benefit 3 card seperti referensi final.
 
 ## 2) Simulator
@@ -35,17 +35,17 @@ Gap:
 
 Aksi:
 1. Pertegas layout kalkulator kiri + insight kanan.
-2. Tambah estimate panel besar + featured bank card.
+2. Tambah estimate panel besar + featured product card.
 
-## 3) Perbandingan Bank
+## 3) Perbandingan Produk Bank
 
 Gap:
-1. Referensi `.stitch` menonjolkan 4 card bank seragam untuk scan cepat.
+1. Referensi `.stitch` menonjolkan 4 card produk seragam untuk scan cepat.
 2. Label/value per card di situs sekarang belum sejelas referensi.
 3. Gaya card harus lebih ringan, elegan, dan tidak terlalu “enterprise dashboard”.
 
 Aksi:
-1. Tambah bank card grid 4 kolom yang seragam.
+1. Tambah product card grid 4 kolom yang seragam.
 2. Format konten card dengan meta label + value + CTA tombol.
 
 ## 4) Pendaftaran

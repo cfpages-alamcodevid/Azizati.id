@@ -1,13 +1,6 @@
 import { create } from "zustand";
 import { banks, travelPackages, costReference } from "../data/banks";
 
-const growthRateByBank = {
-  bsi: 0.035,
-  muamalat: 0.032,
-  "mandiri-syariah": 0.033,
-  "bni-syariah": 0.031,
-};
-
 const getPackagePrice = (goalType, packageId) => {
   const packages = travelPackages[goalType] || [];
   const pkg = packages.find((p) => p.id === packageId);
@@ -16,23 +9,14 @@ const getPackagePrice = (goalType, packageId) => {
 
 const calculateRecommendation = ({ goalType, targetYears, totalCost }) => {
   const months = targetYears * 12;
+  const monthlyContribution = months > 0 ? Math.ceil(totalCost / months) : 0;
 
   return banks
-    .map((bank) => {
-      const rate = growthRateByBank[bank.id] ?? 0.03;
-      const growthFactor = 1 + rate / 12;
-      const projectedMonthly = (totalCost / months) / growthFactor;
-
-      return {
+    .filter((bank) => bank.goals.includes(goalType))
+    .map((bank, index) => ({
         bankId: bank.id,
-        monthlyContribution: Math.ceil(projectedMonthly),
+        monthlyContribution,
         reason: bank.suitableFor,
-      };
-    })
-    .sort((a, b) => a.monthlyContribution - b.monthlyContribution)
-    .slice(0, 3)
-    .map((row, index) => ({
-      ...row,
       priority: index + 1,
       goalType,
     }));

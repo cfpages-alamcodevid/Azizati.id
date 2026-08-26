@@ -10,7 +10,7 @@ import {
   UserPlusIcon,
 } from "@heroicons/react/24/outline";
 import BankLogo from "../components/ui/BankLogo";
-import { banks } from "../data/banks";
+import { bankBrands, banks } from "../data/banks";
 
 const steps = [
   {
@@ -19,8 +19,8 @@ const steps = [
     icon: CalculatorIcon,
   },
   {
-    title: "Bandingkan Bank",
-    desc: "Lihat perbedaan fitur, biaya, dan keunggulan bank mitra syariah.",
+    title: "Bandingkan Produk",
+    desc: "Lihat perbedaan fitur, biaya, dan sasaran tiap produk tabungan syariah.",
     icon: BuildingLibraryIcon,
   },
   {
@@ -33,7 +33,7 @@ const steps = [
 const benefits = [
   {
     title: "Sesuai syariah",
-    desc: "Seluruh proses, mitra bank, dan pilihan produk disusun untuk memberi rasa tenang dan jelas.",
+    desc: "Informasi akad, biaya, dan pilihan produk disusun agar lebih mudah dipahami.",
     icon: ShieldCheckIcon,
   },
   {
@@ -45,29 +45,6 @@ const benefits = [
     title: "Bebas Biaya Tersembunyi",
     desc: "Fokus pada transparansi setoran, manfaat produk, dan kecocokan bank untuk kebutuhan Anda.",
     icon: CheckBadgeIcon,
-  },
-];
-
-const bankHighlights = [
-  {
-    key: "bsi",
-    title: "BSI Tabungan Mabrur",
-    bullets: ["Setoran awal ringan", "Bebas biaya admin", "Fasilitas auto-debet"],
-  },
-  {
-    key: "muamalat",
-    title: "Tabungan iB Hijrah Haji",
-    bullets: ["Setoran awal fleksibel", "Notifikasi target", "Program cicilan tertentu"],
-  },
-  {
-    key: "mandiri-syariah",
-    title: "Tabungan Haji Muda",
-    bullets: ["Panduan menabung", "Program reward", "Kemudahan setor digital"],
-  },
-  {
-    key: "bni-syariah",
-    title: "Tabungan Baitullah",
-    bullets: ["Integrasi layanan", "Produk tematik ibadah", "Jaringan cabang luas"],
   },
 ];
 
@@ -106,7 +83,7 @@ export default function HomePage() {
                 className="inline-flex min-h-11 items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold border border-[#d7c29a] bg-white text-[#2a2213] hover:bg-[#fbf1db] transition-all"
               >
                 <BuildingLibraryIcon className="w-4 h-4" />
-                Bandingkan Bank Syariah
+                Bandingkan Produk Tabungan
               </Link>
             </div>
           </div>
@@ -137,10 +114,10 @@ export default function HomePage() {
         <div className="container">
           <div className="text-center">
             <p className="text-xs font-extrabold uppercase tracking-widest text-[#7c827f] mb-4">
-              Pilihan Bank dalam Perbandingan
+              Bank dalam Pilihan Produk
             </p>
-            <div className="grid grid-cols-2 place-items-center gap-3 sm:grid-cols-4">
-              {banks.map((bank) => (
+            <div className="mx-auto grid max-w-lg grid-cols-2 place-items-center gap-3">
+              {bankBrands.map((bank) => (
                 <BankLogo key={bank.id} bank={bank} />
               ))}
             </div>
@@ -207,7 +184,7 @@ export default function HomePage() {
                 </li>
                 <li className="inline-flex items-start gap-2">
                   <CheckBadgeIcon className="w-4 h-4 text-amber-700 mt-0.5 flex-shrink-0" />
-                  <span>Rekomendasi bank syariah berdasarkan skenario</span>
+                  <span>Pilihan produk yang sesuai dengan tujuan Haji atau Umroh</span>
                 </li>
               </ul>
               <Link
@@ -244,28 +221,27 @@ export default function HomePage() {
               Perbandingan
             </p>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-heading mt-1">
-              Pilih Bank Syariah Terbaik
+              Pilih Produk Tabungan yang Sesuai
             </h2>
             <p className="text-text-body leading-relaxed mt-2">
-              Bandingkan fitur, setoran awal, dan kemudahan dari berbagai mitra bank kami.
+              Bandingkan fitur, setoran awal, sasaran nasabah, dan akad berdasarkan
+              informasi produk resmi bank.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {bankHighlights.map((item) => {
-              const bank = banks.find((entry) => entry.id === item.key);
-              return (
+            {banks.map((bank) => (
                 <article
-                  key={item.key}
+                  key={bank.id}
                   className="bg-white border-t-3 border-[#cfa93f] border rounded-xl p-4 flex flex-col gap-3 shadow-soft"
                 >
                   <div>
-                    {bank ? <BankLogo bank={bank} compact /> : null}
+                    <BankLogo bank={bank} compact />
                     <p className="text-sm font-bold text-text-heading pb-2 border-b border-[#ebe1d0] mt-1">
-                      {item.title}
+                      {bank.product}
                     </p>
                   </div>
                   <ul className="grid gap-2">
-                    {item.bullets.map((bullet) => (
+                    {bank.strengths.map((bullet) => (
                       <li
                         key={bullet}
                         className="inline-flex items-start gap-2 text-sm"
@@ -282,15 +258,14 @@ export default function HomePage() {
                     Lihat Detail
                   </Link>
                 </article>
-              );
-            })}
+              ))}
           </div>
           <div className="text-center mt-4">
             <Link
               to="/perbandingan-bank"
               className="inline-flex items-center gap-1 text-amber-800 font-bold hover:underline"
             >
-              Lihat Semua Perbandingan Bank{" "}
+              Lihat Semua Perbandingan Produk{" "}
               <ArrowRightIcon className="w-4 h-4" />
             </Link>
           </div>

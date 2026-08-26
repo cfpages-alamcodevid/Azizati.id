@@ -1,6 +1,6 @@
 # Azizati.id
 
-Website aggregator Tabungan Haji dan Umroh berbasis React + Vite untuk deployment di Cloudflare Pages.
+Website perencanaan dan perbandingan produk Tabungan Haji dan Umroh berbasis React + Vite untuk deployment di Cloudflare Pages.
 
 ## Panduan Pemula Backend
 
@@ -17,7 +17,7 @@ Website aggregator Tabungan Haji dan Umroh berbasis React + Vite untuk deploymen
 
 - `/` Beranda
 - `/simulator` Simulator tabungan
-- `/perbandingan-bank` Perbandingan bank syariah
+- `/perbandingan-bank` Perbandingan produk tabungan syariah
 - `/pendaftaran` Flow pendaftaran 3 langkah
 - `/edukasi` Syarat dan FAQ
 - `/tabungan-haji` Landing produk tabungan haji

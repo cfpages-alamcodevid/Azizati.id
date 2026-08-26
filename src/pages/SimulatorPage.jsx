@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRightIcon,
   BanknotesIcon,
   CalculatorIcon,
   CheckBadgeIcon,
-  CubeIcon,
   GlobeAltIcon,
-  LockClosedIcon,
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 import SectionTitle from "../components/ui/SectionTitle";
@@ -114,8 +113,8 @@ export default function SimulatorPage() {
   const packages = travelPackages[goalType] || [];
   const selectedPackage = packages.find((p) => p.id === packageId);
 
-  const topRecommendation = result[0];
-  const topBank = banks.find((entry) => entry.id === topRecommendation?.bankId);
+  const topOption = result[0];
+  const topProduct = banks.find((entry) => entry.id === topOption?.bankId);
   const rangeProgress = ((targetYears - 1) / 9) * 100;
   const effectiveCost = Math.max(totalCost - dpAmount, 0);
 
@@ -126,7 +125,7 @@ export default function SimulatorPage() {
           <SectionTitle
             eyebrow="Simulator"
             title="Rencanakan Perjalanan Suci"
-            description="Ketahui estimasi setoran bulanan Anda untuk mencapai target Haji atau Umroh dengan presisi."
+            description="Lihat estimasi setoran bulanan berdasarkan target biaya dan waktu, tanpa asumsi imbal hasil bank."
           />
         </div>
 
@@ -198,6 +197,10 @@ export default function SimulatorPage() {
                       </button>
                     ))}
                   </div>
+                  <p className="mt-2 text-xs leading-relaxed text-text-body">
+                    Nilai paket adalah contoh untuk perencanaan, bukan penawaran
+                    resmi bank atau biro perjalanan.
+                  </p>
                 </div>
               </div>
             </article>
@@ -266,13 +269,13 @@ export default function SimulatorPage() {
                 Estimasi Setoran Bulanan
               </p>
               <p className="text-2xl font-heading font-extrabold text-amber-900 mt-1">
-                {topRecommendation
-                  ? formatRupiah(topRecommendation.monthlyContribution)
+                {topOption
+                  ? formatRupiah(topOption.monthlyContribution)
                   : "Rp 0"}
               </p>
               <div className="mt-3 pt-3 border-t border-dashed border-[#e5d6b6] grid gap-1 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-text-body">Harga Paket</span>
+                  <span className="text-text-body">Estimasi Biaya</span>
                   <span className="font-medium">{formatRupiah(totalCost)}</span>
                 </div>
                 {dpAmount > 0 && (
@@ -293,37 +296,37 @@ export default function SimulatorPage() {
               <div className="relative">
                 <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-amber-100 text-xs font-bold text-amber-800 mb-3">
                   <SparklesIcon className="w-3 h-3" />
-                  Mitra Rekomendasi
+                  Pilihan Produk Sesuai Tujuan
                 </div>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center">
-                    <LockClosedIcon className="w-6 h-6 text-white" />
+                    <BanknotesIcon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    {topBank ? (
-                      <BankLogo bank={topBank} compact />
+                    {topProduct ? (
+                      <BankLogo bank={topProduct} compact />
                     ) : (
                       <h3 className="text-lg font-bold text-text-heading">
-                        Bank Mitra
+                        Produk Tabungan
                       </h3>
                     )}
                     <p className="text-sm text-amber-700 font-medium">
-                      Rekomendasi Utama
+                      {topProduct?.product ?? "Pilih tujuan untuk melihat produk"}
                     </p>
                   </div>
                 </div>
                 <p className="text-sm text-text-body mb-3">
-                  {topRecommendation?.reason ??
-                    "Jalankan simulasi untuk melihat rekomendasi."}
+                  {topOption?.reason ??
+                    "Jalankan simulasi untuk melihat pilihan produk."}
                 </p>
-                <button
-                  type="button"
+                <Link
+                  to="/pendaftaran"
                   className="inline-flex items-center justify-center gap-2 w-full px-3 py-2.5 rounded-lg font-bold bg-gradient-to-r from-[#eedc82] via-[#cfa93f] to-[#8f6c18] text-[#241d0f] hover:brightness-110 transition-all"
                 >
                   <BanknotesIcon className="w-4 h-4" />
-                  Buka Rekening Sekarang
+                  Lanjut Pendaftaran
                   <ArrowRightIcon className="w-4 h-4" />
-                </button>
+                </Link>
               </div>
             </article>
           </div>
@@ -337,8 +340,9 @@ export default function SimulatorPage() {
                 key={item.bankId}
                 className="bg-white border-t-3 border-[#cfa93f] border rounded-xl p-4 shadow-soft"
               >
-                <h3 className="text-base font-bold text-text-heading">
-                  {bank?.shortName}
+                {bank ? <BankLogo bank={bank} compact /> : null}
+                <h3 className="text-base font-bold text-text-heading mt-1">
+                  {bank?.product}
                 </h3>
                 <p className="text-sm font-medium text-amber-900">
                   {formatRupiah(item.monthlyContribution)} / bulan
@@ -351,6 +355,11 @@ export default function SimulatorPage() {
             );
           })}
         </div>
+        <p className="mt-4 text-center text-xs leading-relaxed text-text-body">
+          Estimasi membagi sisa target biaya secara merata selama periode yang
+          dipilih. Hasil bukan proyeksi imbal hasil, harga pasti, atau rekomendasi
+          finansial.
+        </p>
       </div>
     </section>
   );
