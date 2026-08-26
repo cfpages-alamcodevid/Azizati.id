@@ -61,9 +61,9 @@ export default function RegistrationPage() {
   };
 
   return (
-    <section className="py-20">
+    <section className="py-12 md:py-20">
       <div className="container">
-        <div className="max-w-[860px] mx-auto rounded-xl border-t-3 border-[#cfa93f] bg-white/80 shadow-soft p-6">
+        <div className="max-w-[860px] mx-auto rounded-xl border-t-3 border-[#cfa93f] bg-white/80 shadow-soft p-4 sm:p-6">
           <div className="max-w-[72ch] mx-auto text-center mb-4">
             <SectionTitle
               eyebrow="Pendaftaran"
@@ -264,9 +264,9 @@ export default function RegistrationPage() {
               </div>
             ) : null}
 
-            <div className="flex justify-between gap-3 pt-2">
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-between">
               <button
-                className="inline-flex items-center justify-center gap-1 px-4 py-2.5 rounded-lg font-bold border border-[#d7c29a] text-[#2a2213] hover:bg-[#fbf1db] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-1 px-4 py-2.5 rounded-lg font-bold border border-[#d7c29a] text-[#2a2213] hover:bg-[#fbf1db] transition-all disabled:opacity-50 disabled:cursor-not-allowed sm:w-auto"
                 onClick={prevStep}
                 type="button"
                 disabled={step === 1}
@@ -275,7 +275,7 @@ export default function RegistrationPage() {
               </button>
               {step < 4 ? (
                 <button
-                  className="inline-flex items-center justify-center gap-1 px-4 py-2.5 rounded-lg font-bold bg-gradient-to-r from-[#eedc82] via-[#cfa93f] to-[#8f6c18] text-[#241d0f] hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-flex min-h-11 w-full items-center justify-center gap-1 px-4 py-2.5 rounded-lg font-bold bg-gradient-to-r from-[#eedc82] via-[#cfa93f] to-[#8f6c18] text-[#241d0f] hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed sm:w-auto"
                   onClick={nextStep}
                   type="button"
                   disabled={
@@ -288,7 +288,7 @@ export default function RegistrationPage() {
                 </button>
               ) : (
                 <button
-                  className="inline-flex items-center justify-center gap-1 px-4 py-2.5 rounded-lg font-bold bg-gradient-to-r from-[#eedc82] via-[#cfa93f] to-[#8f6c18] text-[#241d0f] hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-flex min-h-11 w-full items-center justify-center gap-1 px-4 py-2.5 rounded-lg font-bold bg-gradient-to-r from-[#eedc82] via-[#cfa93f] to-[#8f6c18] text-[#241d0f] hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed sm:w-auto"
                   onClick={handleSubmitLead}
                   type="button"
                   disabled={isSubmitting}

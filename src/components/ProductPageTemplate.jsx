@@ -21,7 +21,7 @@ export default function ProductPageTemplate({
   consultDescription,
 }) {
   return (
-    <section className="py-20">
+    <section className="py-12 md:py-20">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-center">
           <div className="lg:col-span-2">
@@ -32,25 +32,25 @@ export default function ProductPageTemplate({
                 description={description}
               />
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 to="/simulator"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold bg-gradient-to-r from-[#eedc82] via-[#cfa93f] to-[#8f6c18] text-[#241d0f] hover:brightness-110 transition-all"
+                className="inline-flex min-h-11 items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold bg-gradient-to-r from-[#eedc82] via-[#cfa93f] to-[#8f6c18] text-[#241d0f] hover:brightness-110 transition-all"
               >
                 {ctaText}
               </Link>
               <Link
                 to="/pendaftaran"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold border border-[#d7c29a] text-[#2a2213] hover:bg-[#fbf1db] transition-all"
+                className="inline-flex min-h-11 items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold border border-[#d7c29a] text-[#2a2213] hover:bg-[#fbf1db] transition-all"
               >
                 Pelajari Detail
               </Link>
             </div>
           </div>
-          <div className="lg:col-span-3 relative min-h-[360px] rounded-2xl border border-[#e6d9be] overflow-hidden shadow-card bg-[radial-gradient(circle_at_50%_5%,rgba(238,220,130,0.55),transparent_35%),linear-gradient(180deg,#ffffff,#f7f0e1)]">
+          <div className="lg:col-span-3 relative min-h-[280px] sm:min-h-[360px] rounded-2xl border border-[#e6d9be] overflow-hidden shadow-card bg-[radial-gradient(circle_at_50%_5%,rgba(238,220,130,0.55),transparent_35%),linear-gradient(180deg,#ffffff,#f7f0e1)]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(238,220,130,0.45),transparent_26%),linear-gradient(145deg,#26211b_0%,#17130f_65%,#4e4233_100%)]" />
-            <div className="absolute left-1/2 top-[16%] -translate-x-1/2 w-52 h-52 rounded-lg bg-gradient-to-r from-[#2b251d] via-[#c8a43d] to-[#2b251d] shadow-xl" style={{ background: "linear-gradient(90deg,#2b251d 0%,#2b251d 28%,#c8a43d 28%,#c8a43d 33%,#2b251d 33%,#2b251d 67%,#c8a43d 67%,#c8a43d 72%,#2b251d 72%,#2b251d 100%)" }} />
-            <div className="absolute left-1/2 top-[52%] -translate-x-1/2 w-64 h-20 bg-white rounded-b-[120px] shadow[-8px_0_0_0_#2b251d_inset]" />
+            <div className="absolute left-1/2 top-[16%] -translate-x-1/2 w-40 h-40 sm:w-52 sm:h-52 rounded-lg bg-gradient-to-r from-[#2b251d] via-[#c8a43d] to-[#2b251d] shadow-xl" style={{ background: "linear-gradient(90deg,#2b251d 0%,#2b251d 28%,#c8a43d 28%,#c8a43d 33%,#2b251d 33%,#2b251d 67%,#c8a43d 67%,#c8a43d 72%,#2b251d 72%,#2b251d 100%)" }} />
+            <div className="absolute left-1/2 top-[52%] -translate-x-1/2 w-52 h-16 sm:w-64 sm:h-20 bg-white rounded-b-[120px] shadow[-8px_0_0_0_#2b251d_inset]" />
             <div className="absolute left-4 bottom-4 inline-flex items-center gap-1 px-3 py-2 rounded-full border border-[#e6d8bb] bg-white text-sm font-bold">
               <SparklesIcon className="w-4 h-4" />
               Program Terpercaya

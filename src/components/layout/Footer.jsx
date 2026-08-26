@@ -26,11 +26,18 @@ export default function Footer() {
     <footer className="mt-6 border-t border-[#ddd0b4] bg-gradient-to-b from-[#fbf7ef] to-[#f1e7d5] text-[#2b2418]">
       <div className="container py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="md:col-span-1">
-          <img
-            src="/images/azizati-logo.png"
-            alt="Azizati.id"
-            className="h-12 w-auto mb-4"
-          />
+          <div className="mb-4 inline-flex items-center gap-2">
+            <span className="h-11 w-10 overflow-hidden flex-shrink-0" aria-hidden="true">
+              <img
+                src="/images/azizati-logo.png"
+                alt=""
+                className="h-11 w-auto max-w-none"
+              />
+            </span>
+            <span className="font-heading text-xl font-extrabold text-[#17130f]">
+              Azizati<span className="text-[#9a741b]">.id</span>
+            </span>
+          </div>
           <p className="text-base font-bold text-text-heading mb-2">Tentang Kami</p>
           <p className="text-sm text-[#665f53] leading-relaxed">
             Azizati.id adalah platform perencanaan tabungan Haji dan Umroh
@@ -42,7 +49,7 @@ export default function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              className="w-9 h-9 rounded-full inline-flex items-center justify-center border border-[#dfcfaf] bg-white/70 text-[#6a5316] hover:bg-[#fff7e8] transition-all"
+              className="w-11 h-11 rounded-full inline-flex items-center justify-center border border-[#dfcfaf] bg-white/70 text-[#6a5316] hover:bg-[#fff7e8] transition-all"
               aria-label="Instagram"
             >
               <GlobeAltIcon className="w-4 h-4" />
@@ -51,14 +58,14 @@ export default function Footer() {
               href="https://facebook.com"
               target="_blank"
               rel="noreferrer"
-              className="w-9 h-9 rounded-full inline-flex items-center justify-center border border-[#dfcfaf] bg-white/70 text-[#6a5316] hover:bg-[#fff7e8] transition-all"
+              className="w-11 h-11 rounded-full inline-flex items-center justify-center border border-[#dfcfaf] bg-white/70 text-[#6a5316] hover:bg-[#fff7e8] transition-all"
               aria-label="Facebook"
             >
               <ChatBubbleOvalLeftEllipsisIcon className="w-4 h-4" />
             </a>
             <a
               href="mailto:info@azizati.id"
-              className="w-9 h-9 rounded-full inline-flex items-center justify-center border border-[#dfcfaf] bg-white/70 text-[#6a5316] hover:bg-[#fff7e8] transition-all"
+              className="w-11 h-11 rounded-full inline-flex items-center justify-center border border-[#dfcfaf] bg-white/70 text-[#6a5316] hover:bg-[#fff7e8] transition-all"
               aria-label="Email"
             >
               <EnvelopeIcon className="w-4 h-4" />
@@ -131,11 +138,11 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-[#ddd1b7]">
-        <div className="container min-h-14 flex items-center justify-between py-3">
+        <div className="container min-h-14 flex flex-col items-start justify-between gap-3 py-4 sm:flex-row sm:items-center sm:py-3">
           <p className="text-sm text-[#665f53]">
             © 2026 Azizati.id. Nikmatnya Ibadah.
           </p>
-          <div className="inline-flex gap-4">
+          <div className="flex flex-wrap gap-x-4 gap-y-2">
             <Link to="/edukasi" className="text-sm text-[#665f53] hover:text-amber-800">
               Kebijakan Privasi
             </Link>

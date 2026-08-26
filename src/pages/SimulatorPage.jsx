@@ -119,7 +119,7 @@ export default function SimulatorPage() {
   const effectiveCost = Math.max(totalCost - dpAmount, 0);
 
   return (
-    <section className="py-20">
+    <section className="py-12 md:py-20">
       <div className="container">
         <div className="max-w-[72ch] mx-auto text-center mb-8">
           <SectionTitle

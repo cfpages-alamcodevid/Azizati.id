@@ -13,7 +13,7 @@ const formatRupiah = (value) =>
 
 export default function ComparisonPage() {
   return (
-    <section className="py-20">
+    <section className="py-12 md:py-20">
       <div className="container">
         <div className="max-w-[72ch] mx-auto text-center mb-8">
           <SectionTitle
@@ -80,7 +80,12 @@ export default function ComparisonPage() {
           ))}
         </div>
 
-        <div className="mt-6 overflow-x-auto border border-[#e6d8bc] rounded-xl shadow-soft bg-white">
+        <div
+          className="mt-6 overflow-x-auto border border-[#e6d8bc] rounded-xl shadow-soft bg-white"
+          role="region"
+          aria-label="Tabel perbandingan lengkap, geser ke samping pada layar kecil"
+          tabIndex="0"
+        >
           <table className="w-full min-w-[760px] border-collapse">
             <thead className="bg-[#f8eed9]">
               <tr>
